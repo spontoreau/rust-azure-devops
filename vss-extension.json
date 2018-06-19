@@ -1,0 +1,36 @@
+{
+    "manifestVersion": 1,
+    "id": "rust-vsts-extension",
+    "version": "1.0.0",
+    "name": "Rust",
+    "description": "Rust tasks for Visual Studio Team Services",
+    "publisher": "spontoreau",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "icon.png"
+    },
+    "scopes": [
+        "vso.work"
+    ],
+    "files": [
+        {
+            "path": "tasks"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "cargo-task",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks"
+            }
+        }
+    ]
+}
