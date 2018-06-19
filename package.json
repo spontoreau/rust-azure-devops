@@ -1,7 +1,7 @@
 {
   "name": "rust-vsts-extension",
   "version": "1.0.0",
-  "description": "[WIP] Rust tasks for Visual Studio Team Services",
+  "description": "Rust tasks for Visual Studio Team Services",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,22 @@
     "type": "git",
     "url": "git+https://github.com/spontoreau/rust-vsts-extension.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "rust",
+    "rust language",
+    "cargo",
+    "build",
+    "vsts",
+    "ci",
+    "continious integration"
+  ],
+  "author": "Sylvain Pontoreau",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/spontoreau/rust-vsts-extension/issues"
   },
-  "homepage": "https://github.com/spontoreau/rust-vsts-extension#readme"
+  "homepage": "https://github.com/spontoreau/rust-vsts-extension#readme",
+  "dependencies": {
+    "vsts-task-lib": "^2.4.0"
+  }
 }
