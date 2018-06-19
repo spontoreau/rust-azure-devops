@@ -27,5 +27,8 @@
   "homepage": "https://github.com/spontoreau/rust-vsts-extension#readme",
   "dependencies": {
     "vsts-task-lib": "^2.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^2.9.2"
   }
 }
