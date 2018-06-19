@@ -1,0 +1,20 @@
+{
+  "name": "rust-vsts-extension",
+  "version": "1.0.0",
+  "description": "[WIP] Rust tasks for Visual Studio Team Services",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spontoreau/rust-vsts-extension.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spontoreau/rust-vsts-extension/issues"
+  },
+  "homepage": "https://github.com/spontoreau/rust-vsts-extension#readme"
+}
