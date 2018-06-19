@@ -29,6 +29,7 @@
     "vsts-task-lib": "^2.4.0"
   },
   "devDependencies": {
+    "@types/node": "^10.3.4",
     "typescript": "^2.9.2"
   }
 }
