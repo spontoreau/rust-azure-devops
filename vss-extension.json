@@ -1,9 +1,9 @@
 {
     "manifestVersion": 1,
-    "id": "rust-vsts-extension",
+    "id": "rust-vsts",
     "version": "1.0.0",
     "name": "Rust",
-    "description": "Rust tasks for Visual Studio Team Services",
+    "description": "Rust extension for Visual Studio Team Services",
     "publisher": "spontoreau",
     "targets": [
         {
