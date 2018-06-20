@@ -4,7 +4,9 @@
   "description": "Rust extension for Visual Studio Team Services",
   "main": "index.js",
   "scripts": {
-    "build": "tsc"
+    "compile": "tsc",
+    "create": "tfx extension create --manifest-globs vss-extension.json --output-path dist",
+    "publish" : "tfx extension publish"
   },
   "repository": {
     "type": "git",
