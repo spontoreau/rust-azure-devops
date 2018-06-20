@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "tsc",
     "create": "tfx extension create --manifest-globs vss-extension.json --output-path dist",
-    "publish" : "tfx extension publish"
+    "publish": "tfx extension publish"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/spontoreau/rust-vsts#readme",
   "dependencies": {
-    "vsts-task-lib": "^2.4.0"
+    "vsts-task-lib": "^2.5.0"
   },
   "devDependencies": {
     "@types/node": "^10.3.4",
