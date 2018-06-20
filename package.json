@@ -1,14 +1,14 @@
 {
-  "name": "rust-vsts-extension",
+  "name": "rust-vsts",
   "version": "1.0.0",
-  "description": "Rust tasks for Visual Studio Team Services",
+  "description": "Rust extension for Visual Studio Team Services",
   "main": "index.js",
   "scripts": {
     "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spontoreau/rust-vsts-extension.git"
+    "url": "git+https://github.com/spontoreau/rust-vsts.git"
   },
   "keywords": [
     "rust",
@@ -22,9 +22,9 @@
   "author": "Sylvain Pontoreau",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/spontoreau/rust-vsts-extension/issues"
+    "url": "https://github.com/spontoreau/rust-vsts/issues"
   },
-  "homepage": "https://github.com/spontoreau/rust-vsts-extension#readme",
+  "homepage": "https://github.com/spontoreau/rust-vsts#readme",
   "dependencies": {
     "vsts-task-lib": "^2.4.0"
   },
