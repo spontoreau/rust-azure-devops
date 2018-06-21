@@ -60,5 +60,8 @@ typings/
 # next.js build output
 .next
 
+#tsc
+*.js
+
 # tfx
 dist/
