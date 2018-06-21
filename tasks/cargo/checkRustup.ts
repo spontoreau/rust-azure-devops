@@ -1,9 +1,3 @@
-import { exec } from "child_process";
-import { promisify } from "util";
+import { which } from "vsts-task-lib";
 
-export default () =>  promisify(exec)('rustup --version')
-        .then(() => Promise.resolve(true))
-        .catch((err: Error) => {
-            console.error(err.message);
-            return Promise.resolve(false);
-        });
+export default () =>  which("rustup") ? Promise.resolve(true) : Promise.resolve(false);
