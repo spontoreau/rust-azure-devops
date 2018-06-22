@@ -1,0 +1,20 @@
+{
+  "id": "4863ab4f-4198-4729-bc2b-88922077db10",
+  "name": "Install Rust",
+  "friendlyName": "Install",
+  "description": "Install latest version of Rust with Rustup",
+  "helpMarkdown": "More information  Rustup [documentation](https://rustup.rs)",
+  "category": "Utility",
+  "author": "Sylvain Pontoreau",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Install",
+  "execution": {
+    "Node": {
+      "target": "index.js"
+    }
+  }
+}
