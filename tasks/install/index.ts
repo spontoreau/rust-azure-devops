@@ -1,19 +1,18 @@
-import tl from "vsts-task-lib";
+import { exec, setResult, TaskResult, which } from "vsts-task-lib";
 
 (async () => {
     try {
-        if(!tl.which("rustup")) {
+        if(!which("rustup")) {
             console.log(`Rustup not available.`);
         } else {
-            const returnCode = await tl.exec("rustup", "update");
+            const updated = await exec("rustup", "update") > 0;
 
-            if(returnCode > 0) {
-                tl.setResult(tl.TaskResult.Failed, "Rustup update failed.");
-            } else {
-                tl.setResult(tl.TaskResult.Succeeded, "Rust updated.");
-            }
+            setResult(
+                updated ? TaskResult.Succeeded : TaskResult.Succeeded,
+                updated ? "Rust updated." : "Rustup update failed."
+            );
         }
     } catch(e) {
-        tl.setResult(tl.TaskResult.Failed, e.message);
+        setResult(TaskResult.Failed, e.message);
     }
 })();
