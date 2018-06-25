@@ -1,4 +1,4 @@
-import { exec, setResult, TaskResult, which, tool } from "vsts-task-lib";
+import { debug, exec, setResult, TaskResult, which, tool } from "vsts-task-lib";
 
 (async () => {
     try {
@@ -13,7 +13,7 @@ import { exec, setResult, TaskResult, which, tool } from "vsts-task-lib";
 })();
 
 async function downloadAndInstall() {
-    console.log(`Rustup not available.`);
+    debug("Rustup not available.");
     const updated = await tool(which("curl"))
             .arg("https://sh.rustup.rs")
             .arg("-sSf")
@@ -26,6 +26,7 @@ async function downloadAndInstall() {
 }
 
 async function update() {
+    debug("Rustup available.");
     const updated = await exec("rustup", "update") === 0;
     setUpdateResult(updated);
 }
