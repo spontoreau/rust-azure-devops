@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "compile": "tsc",
-    "create": "tfx extension create --manifest-globs vss-extension.json --output-path dist",
+    "add-sdk-to-install-task": "npm install vsts-task-lib --prefix ./tasks/install",
+    "package": "tfx extension create --manifest-globs vss-extension.json --output-path dist",
     "publish": "tfx extension publish"
   },
   "repository": {
