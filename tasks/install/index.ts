@@ -2,11 +2,11 @@ import { debug, exec, setResult, TaskResult, which, tool } from "vsts-task-lib";
 
 (async () => {
     try {
-        if (!which("rustup")) {
-            await downloadAndInstall();
-        } else {
-            await update();
-        }
+        const returnCode = !!which("rustup") 
+                ? await update()
+                : await downloadAndInstall();
+
+        setUpdateResult(returnCode);
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
     }
@@ -14,24 +14,24 @@ import { debug, exec, setResult, TaskResult, which, tool } from "vsts-task-lib";
 
 async function downloadAndInstall() {
     debug("Rustup not available.");
-    const updated = await tool(which("curl"))
+    return await tool(which("curl"))
             .arg("https://sh.rustup.rs")
             .arg("-sSf")
             .pipeExecOutputToTool(tool(which("sh"))
                                     .arg("-s")
                                     .arg("--")
                                     .arg("-y")
-            ).exec() === 0;
-    setUpdateResult(updated);
+            ).exec();
 }
 
 async function update() {
     debug("Rustup available.");
-    const updated = await exec("rustup", "update") === 0;
-    setUpdateResult(updated);
+    return await exec("rustup", "update");
 }
 
-function setUpdateResult(updated: boolean) {
+function setUpdateResult(returnCode: Readonly<number>) {
+    debug(`Return code: ${returnCode}`);
+    const updated = returnCode === 0;
     setResult(
         updated 
             ? TaskResult.Succeeded 
