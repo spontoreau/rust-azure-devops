@@ -1,11 +1,17 @@
-import { debug, exec, setResult, TaskResult, which, tool } from "vsts-task-lib";
+import { 
+    debug, 
+    exec, 
+    setResult, 
+    TaskResult, 
+    which, 
+    tool 
+} from "vsts-task-lib";
 
 (async () => {
     try {
         const returnCode = !!which("rustup") 
                 ? await update()
                 : await downloadAndInstall();
-
         setUpdateResult(returnCode);
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
@@ -20,8 +26,8 @@ async function downloadAndInstall() {
             .pipeExecOutputToTool(tool(which("sh"))
                                     .arg("-s")
                                     .arg("--")
-                                    .arg("-y")
-            ).exec();
+                                    .arg("-y"))
+            .exec();
 }
 
 async function update() {
