@@ -14,11 +14,7 @@ import { exec, setResult, TaskResult, which, tool } from "vsts-task-lib";
             curl.pipeExecOutputToTool(sh);
 
             const updated = await curl.exec() === 0;
-
-            setResult(
-                updated ? TaskResult.Succeeded : TaskResult.Failed,
-                updated ? "Rust updated." : "Rustup update failed."
-            )
+            setUpdateResult(updated);
         } else {
             await update();
         }
@@ -29,8 +25,16 @@ import { exec, setResult, TaskResult, which, tool } from "vsts-task-lib";
 
 async function update() {
     const updated = await exec("rustup", "update") === 0;
-    setResult(
-        updated ? TaskResult.Succeeded : TaskResult.Failed,
-        updated ? "Rust updated." : "Rustup update failed."
-    );
+    setUpdateResult(updated);
 }
+
+function setUpdateResult(updated: boolean) {
+    setResult(
+        updated 
+            ? TaskResult.Succeeded 
+            : TaskResult.Failed, 
+        updated 
+            ? "Rust updated." 
+            : "Rustup update failed.");
+}
+
