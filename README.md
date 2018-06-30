@@ -6,3 +6,12 @@
 ![status](https://img.shields.io/badge/status-wip-orange.svg) 
 ![marketplace](https://img.shields.io/badge/marketplace-private-red.svg)
 
+> 🚧 This extension is a "work in progress". Don't use it for production propose, it can't be considered as stable yet.
+
+## Contribution
+
+This project has adopted the code of conduct defined by the [Contributor Covenant](https://www.contributor-covenant.org/). Before contributing to this repository, take a look at the [code of conduct](CODE_OF_CONDUCT.md).
+
+## Licence
+
+[MIT](LICENSE)
