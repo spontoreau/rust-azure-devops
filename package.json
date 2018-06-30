@@ -4,6 +4,7 @@
   "description": "Rust extension for Visual Studio Team Services",
   "main": "index.js",
   "scripts": {
+    "lint": "tslint -c tslint.json 'tasks/**/*.ts'",
     "compile": "tsc",
     "add-sdk-to-install-task": "npm install vsts-task-lib --prefix ./tasks/install",
     "package": "tfx extension create --manifest-globs vss-extension.json --output-path dist",
@@ -35,6 +36,7 @@
     "@types/node": "^10.3.5",
     "@types/q": "^1.5.0",
     "tfx-cli": "^0.5.10",
+    "tslint": "^5.10.0",
     "typescript": "^2.9.2"
   }
 }
