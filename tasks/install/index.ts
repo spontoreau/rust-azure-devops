@@ -1,15 +1,15 @@
-import { 
-    debug, 
-    exec, 
-    setResult, 
-    TaskResult, 
-    which, 
-    tool 
+import {
+    debug,
+    exec,
+    setResult,
+    TaskResult,
+    tool,
+    which,
 } from "vsts-task-lib";
 
 (async () => {
     try {
-        const returnCode = !!which("rustup") 
+        const returnCode = !!which("rustup")
                 ? await update()
                 : await downloadAndInstall();
         setUpdateResult(returnCode);
@@ -39,11 +39,10 @@ function setUpdateResult(returnCode: Readonly<number>) {
     debug(`Return code: ${returnCode}`);
     const updated = returnCode === 0;
     setResult(
-        updated 
-            ? TaskResult.Succeeded 
-            : TaskResult.Failed, 
-        updated 
-            ? "Rust updated." 
+        updated
+            ? TaskResult.Succeeded
+            : TaskResult.Failed,
+        updated
+            ? "Rust updated."
             : "Rustup update failed.");
 }
-
