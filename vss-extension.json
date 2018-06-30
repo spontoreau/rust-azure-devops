@@ -1,6 +1,6 @@
 {
     "manifestVersion": 1,
-    "id": "rust-vsts",
+    "id": "rust",
     "version": "0.1.0",
     "name": "Rust",
     "description": "Rust extension for Visual Studio Team Services",
