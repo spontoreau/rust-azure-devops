@@ -3,7 +3,7 @@
   "name": "Install Rust",
   "friendlyName": "Install",
   "description": "Install latest version of Rust with Rustup",
-  "helpMarkdown": "More information  Rustup [documentation](https://rustup.rs)",
+  "helpMarkdown": "More information in Rustup [documentation](https://rustup.rs)",
   "category": "Utility",
   "author": "Sylvain Pontoreau",
   "version": {
