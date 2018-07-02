@@ -12,6 +12,21 @@
     "Patch": 0
   },
   "instanceNameFormat": "Cargo",
+  "inputs": [
+    {
+      "name": "cargoCommand",
+      "type": "string",
+      "label": "Command",
+      "defaultValue": "",
+      "required": true
+    }, {
+      "name": "cargoCommandArguments",
+      "type": "string",
+      "label": "Arguments",
+      "defaultValue": "",
+      "required": true
+    }
+  ],
   "execution": {
     "Node": {
       "target": "index.js"
