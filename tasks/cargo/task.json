@@ -1,0 +1,20 @@
+{
+  "id": "4863ab4f-4198-4729-bc2b-88922077db10",
+  "name": "Cargo command",
+  "friendlyName": "Cargo",
+  "description": "Execute a Cargo command",
+  "helpMarkdown": "More information in the Cargo [documentation](https://doc.rust-lang.org/cargo/)",
+  "category": "Build",
+  "author": "Sylvain Pontoreau",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Cargo",
+  "execution": {
+    "Node": {
+      "target": "index.js"
+    }
+  }
+}
