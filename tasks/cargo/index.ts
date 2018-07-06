@@ -5,11 +5,11 @@ import {
     setResult,
     TaskResult,
     tool,
-    which
+    which,
 } from "vsts-task-lib";
 
 import {
-    ToolRunner
+    ToolRunner,
 } from "vsts-task-lib/toolrunner";
 
 (async () => {
@@ -17,11 +17,11 @@ import {
         const command = getInput("cargoCommand");
         const args = getInput("cargoCommandArguments");
 
-        !!which("cargo") 
-            ? await await exec("cargo", [command, ...args.split(" ")]) > 0 
+        !!which("cargo")
+            ? await await exec("cargo", [command, ...args.split(" ")]) > 0
                 ? setResult(TaskResult.Failed, "Error")
                 : setResult(TaskResult.Succeeded, "Task done!")
-            : setResult(TaskResult.Failed, "Cargo is not available")
+            : setResult(TaskResult.Failed, "Cargo is not available");
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
     }
