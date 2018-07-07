@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "rust",
-    "version": "0.1.0",
+    "version": "0.3.0",
     "name": "Rust",
     "description": "Rust extension for Visual Studio Team Services",
     "publisher": "spontoreau",
@@ -18,18 +18,31 @@
     ],
     "files": [
         {
-            "path": "tasks"
+            "path": "tasks/cargo"
+        },
+        {
+            "path": "tasks/install"
         }
     ],
     "contributions": [
         {
-            "id": "cargo-task",
+            "id": "rust-install",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "tasks"
+                "name": "tasks/install"
+            }
+        },
+        {
+            "id": "rust-cargo",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/cargo"
             }
         }
     ]
