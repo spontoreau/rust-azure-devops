@@ -1,24 +1,22 @@
 import {
-    debug,
     exec,
     getInput,
     setResult,
     TaskResult,
-    tool,
     which,
 } from "vsts-task-lib";
-
-import {
-    ToolRunner,
-} from "vsts-task-lib/toolrunner";
 
 (async () => {
     try {
         const command = getInput("cargoCommand");
-        const args = getInput("cargoCommandArguments");
+        const argsInput = getInput("cargoCommandArguments");
 
-        !!which("cargo")
-            ? await await exec("cargo", [command, ...args.split(" ")]) > 0
+        const args = argsInput 
+            ? [command, ...argsInput.split(" ")]
+            : command;
+            
+        which("cargo")
+            ? await await exec("cargo", args) > 0
                 ? setResult(TaskResult.Failed, "Error")
                 : setResult(TaskResult.Succeeded, "Task done!")
             : setResult(TaskResult.Failed, "Cargo is not available");
