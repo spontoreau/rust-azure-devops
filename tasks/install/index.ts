@@ -9,7 +9,7 @@ import {
 
 (async () => {
     try {
-        const returnCode = !!which("rustup")
+        const returnCode = which("rustup")
                 ? await update()
                 : await downloadAndInstall();
         setUpdateResult(returnCode);
