@@ -9,36 +9,22 @@ import {
 
 import os from "os";
 import process from "process";
+import path from "path";
 
 (async () => {
     try {
-        const separator = os.platform() === "win32" ? ";" : ":";
-        console.log(`Separator: ${separator}`);
-        console.log(`OS: ${os.platform()}`);
-        const cargoPath = ((system: string) => {
-            switch(system) {
-                case "win32":
-                    return "c:/Users/VssAdministrator/.cargo/bin";
-                case "darwin":
-                    return "/Users/vsts/.cargo/bin";
-                case "linux":
-                    return "/root/.cargo/bin";
-            }
-        })(os.platform());
-        console.log(`Cargo path: ${cargoPath}`);
-        const currentPath = process.env["PATH"];
+        const cargoPath = `${ os.homedir() }${path.sep}.cargo${path.sep}bin`;
+
         process.env["PATH"] = process.env["PATH"]
-            ? cargoPath + separator + currentPath
+            ? cargoPath + path.delimiter + process.env["PATH"]
             : cargoPath;
 
-        console.log(process.env["PATH"]);
-
-        const command = getInput("cargoCommand");
+        const commandInput = getInput("cargoCommand");
         const argsInput = getInput("cargoCommandArguments");
 
         const args = argsInput
-            ? [command, ...argsInput.split(" ")]
-            : command;
+            ? [commandInput, ...argsInput.split(" ")]
+            : commandInput;
 
         which("cargo")
             ? await await exec("cargo", args) > 0
