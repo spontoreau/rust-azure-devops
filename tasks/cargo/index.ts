@@ -12,7 +12,7 @@ import process from "process";
 
 (async () => {
     try {
-        const cargoPath = `${ os.homedir() }${path.sep}.cargo${path.sep}bin`;
+        const cargoPath = path.join(os.homedir(), ".cargo", "bin");
 
         process.env.PATH = process.env.PATH
             ? cargoPath + path.delimiter + process.env.PATH
