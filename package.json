@@ -36,6 +36,10 @@
   "devDependencies": {
     "@types/node": "^10.5.1",
     "@types/q": "^1.5.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^5.0.0-alpha.3",
+    "run-sequence": "^2.2.1",
     "tfx-cli": "^0.5.12",
     "tslint": "^5.10.0",
     "typescript": "^2.9.2"
