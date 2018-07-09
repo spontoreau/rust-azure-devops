@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "tslint -c tslint.json 'tasks/**/*.ts'",
     "compile": "tsc",
+    "build": "gulp",
     "add-sdk-to-install-task": "npm install vsts-task-lib --prefix ./tasks/install",
     "add-sdk-to-cargo-task": "npm install vsts-task-lib --prefix ./tasks/cargo",
     "package": "tfx extension create --manifest-globs vss-extension.json --output-path dist",
