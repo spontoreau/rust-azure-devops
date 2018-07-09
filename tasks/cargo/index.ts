@@ -1,5 +1,4 @@
 import {
-    debug,
     exec,
     getInput,
     setResult,
@@ -8,15 +7,15 @@ import {
 } from "vsts-task-lib";
 
 import os from "os";
-import process from "process";
 import path from "path";
+import process from "process";
 
 (async () => {
     try {
         const cargoPath = `${ os.homedir() }${path.sep}.cargo${path.sep}bin`;
 
-        process.env["PATH"] = process.env["PATH"]
-            ? cargoPath + path.delimiter + process.env["PATH"]
+        process.env.PATH = process.env.PATH
+            ? cargoPath + path.delimiter + process.env.PATH
             : cargoPath;
 
         const commandInput = getInput("cargoCommand");
