@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/spontoreau/rust-vsts#readme",
   "dependencies": {
+    "gulp-install": "^1.1.0",
     "vsts-task-lib": "^2.5.0"
   },
   "devDependencies": {
