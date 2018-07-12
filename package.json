@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "tslint -c tslint.json 'tasks/**/*.ts'",
     "compile": "tsc",
-    "build": "gulp",
+    "build:beta": "gulp && npm run package",
+    "package": "tfx extension create --manifest-globs ./tmp/vss-extension.json --output-path ./dist",
     "publish": "tfx extension publish"
   },
   "repository": {
@@ -37,11 +38,13 @@
     "@types/q": "^1.5.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-json-editor": "^2.4.1",
     "gulp-rename": "^1.3.0",
     "gulp-typescript": "^5.0.0-alpha.3",
     "run-sequence": "^2.2.1",
     "tfx-cli": "^0.5.12",
     "tslint": "^5.10.0",
-    "typescript": "^2.9.2"
+    "typescript": "^2.9.2",
+    "yargs": "^12.0.1"
   }
 }

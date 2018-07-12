@@ -3,8 +3,16 @@ const tsc = require("gulp-typescript");
 const del = require("del");
 const runSequence = require("run-sequence");
 const rename = require("gulp-rename");
+const jeditor = require("gulp-json-editor");
 const run = require("gulp-run");
+const argv   = require('yargs').argv;
 const fs = require("fs");
+
+const now = new Date();
+const env = argv.release ? "" : "beta";
+const buildNumber = argv.build ? argv.build : Date.now().toString();
+
+console.log(buildNumber);
 
 //Clean
 gulp.task("clean", () => del("tmp"));
@@ -33,7 +41,16 @@ gulp.task("copy", () => {
                             .pipe(gulp.dest("./tmp/tasks"));
 
     const manifestCopyStream = gulp
-                                .src(["./vss-extension.json", "./DETAILS.md", "./LICENSE", , "./icon.png"])
+                                .src("./vss-extension.json")
+                                .pipe(jeditor((json) => {
+                                    json.id = `rust-vsts-${env}`;
+                                    json.version = json.version.replace("{buildNumber}", buildNumber);
+                                    return json;
+                                }))
+                                .pipe(gulp.dest("./tmp/"));
+
+    const ressourceCopyStream = gulp
+                                .src(["./DETAILS.md", "./LICENSE", "./icon.png"])
                                 .pipe(gulp.dest("./tmp/"));
 
     streams.push(tasksFilesCopyStream);
@@ -67,7 +84,7 @@ gulp.task("install", () => {
 
 gulp.task("package", () => {
     return run("tfx extension create --manifest-globs ./tmp/vss-extension.json --output-path ./dist").exec()
-})
+});
 
 //Default
-gulp.task("default", (cb) => runSequence("clean", "compile", "copy", "install", "package", cb));
+gulp.task("default", (cb) => runSequence("clean", "compile", "copy", "install", cb));
