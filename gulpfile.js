@@ -3,6 +3,7 @@ const tsc = require("gulp-typescript");
 const del = require("del");
 const runSequence = require("run-sequence");
 const rename = require("gulp-rename");
+const run = require("gulp-run");
 const fs = require("fs");
 
 //Clean
@@ -31,18 +32,21 @@ gulp.task("copy", () => {
                             .src(["./tasks/**/*.*"])
                             .pipe(gulp.dest("./tmp/tasks"));
 
+    const manifestCopyStream = gulp
+                                .src(["./LICENSE", "./vss-extension.json"])
+                                .pipe(gulp.dest("./tmp/"));
+
     streams.push(tasksFilesCopyStream);
+    streams.push(manifestCopyStream);
 
     const files = fs.readdirSync("./tmp/");
 
     files.forEach((file) => {
         const source = `./tmp/${file}`;
-        console.log(source);
         const stat = fs.statSync(source);
 
         if (stat && stat.isFile()) {
             const target = `./tmp/tasks/${file.replace(/\.[^/.]+$/, "")}`;
-            console.log(target);
             const stream = gulp
                 .src(source)
                 .pipe(rename("index.js"))
@@ -51,9 +55,15 @@ gulp.task("copy", () => {
             streams.push(del(source));
         }
     });
-
     return streams;
 });
 
+gulp.task("install", () => {
+    return [
+        run("npm install vsts-task-lib --prefix ./tmp/tasks/install").exec(),
+        run("npm install vsts-task-lib --prefix ./tmp/tasks/cargo").exec()
+    ]
+});
+
 //Default
-gulp.task("default", (cb) => runSequence("clean", "compile", "copy", cb));
+gulp.task("default", (cb) => runSequence("clean", "compile", "copy", "install", cb));
