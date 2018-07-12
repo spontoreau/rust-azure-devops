@@ -6,9 +6,8 @@
   "scripts": {
     "lint": "tslint -c tslint.json 'tasks/**/*.ts'",
     "compile": "tsc",
-    "build:beta": "gulp && npm run package",
-    "package": "tfx extension create --manifest-globs ./tmp/vss-extension.json --output-path ./dist",
-    "publish": "tfx extension publish"
+    "build": "gulp",
+    "package": "tfx extension create --manifest-globs ./tmp/vss-extension.json --output-path ./dist"
   },
   "repository": {
     "type": "git",
