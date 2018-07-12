@@ -33,7 +33,7 @@ gulp.task("copy", () => {
                             .pipe(gulp.dest("./tmp/tasks"));
 
     const manifestCopyStream = gulp
-                                .src(["./LICENSE", "./vss-extension.json"])
+                                .src(["./vss-extension.json", "./DETAILS.md", "./LICENSE", , "./icon.png"])
                                 .pipe(gulp.dest("./tmp/"));
 
     streams.push(tasksFilesCopyStream);
@@ -65,5 +65,9 @@ gulp.task("install", () => {
     ]
 });
 
+gulp.task("package", () => {
+    return run("tfx extension create --manifest-globs ./tmp/vss-extension.json --output-path ./dist").exec()
+})
+
 //Default
-gulp.task("default", (cb) => runSequence("clean", "compile", "copy", "install", cb));
+gulp.task("default", (cb) => runSequence("clean", "compile", "copy", "install", "package", cb));
