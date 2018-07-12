@@ -61,7 +61,10 @@ typings/
 .next
 
 #tsc
-*.js
+src/**/*.js
+
+#gulp
+tmp/
 
 # tfx
 dist/
