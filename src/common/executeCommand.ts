@@ -7,7 +7,7 @@ import {
 
 import addCargoToPath from "./addCargoToPath";
 
-export default async (command: string, args: string) => {
+export default async (tool: string, command: string, args: string) => {
     addCargoToPath();
 
     const toolArgs = args
@@ -15,7 +15,7 @@ export default async (command: string, args: string) => {
         : command;
 
     which("cargo")
-        ? await await exec("cargo", toolArgs) > 0
+        ? await await exec(tool, toolArgs) > 0
             ? setResult(TaskResult.Failed, "Error")
             : setResult(TaskResult.Succeeded, "Task done!")
         : setResult(TaskResult.Failed, "Cargo is not available");
