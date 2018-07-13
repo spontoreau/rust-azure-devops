@@ -1,5 +1,4 @@
 import debug from "../common/debug";
-import { join } from "path";
 
 const rustupCommandInput = { 
     name: "rustupCommand", 
