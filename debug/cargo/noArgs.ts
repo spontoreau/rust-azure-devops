@@ -1,8 +1,10 @@
+import debug from "../common/debug";
 import { join } from "path";
-import { TaskMockRunner } from "vsts-task-lib/mock-run";
 
-const taskPath = join(__dirname, "../../src", "index.js");
+const taskPath = join(__dirname, "../../src", "cargo.js");
+const cargoCommandInput = { 
+    name: "cargoCommand", 
+    value: "help" 
+};
 
-const taskMockRunner = new TaskMockRunner(taskPath);
-taskMockRunner.setInput("cargoCommand", "help");
-taskMockRunner.run();
+debug(taskPath, cargoCommandInput);
