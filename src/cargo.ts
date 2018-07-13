@@ -10,7 +10,7 @@ import executeCommand from "./common/executeCommand";
 
 (async (command, args) => {
     try {
-        await executeCommand(command, args);
+        await executeCommand("cargo", command, args);
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
     }
