@@ -7,4 +7,4 @@ const cargoCommandInput = {
     value: "help" 
 };
 
-debug(taskPath, cargoCommandInput);
+debug("cargo.js", cargoCommandInput);
