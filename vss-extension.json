@@ -16,12 +16,23 @@
     "scopes": [
         "vso.work"
     ],
+    "content": {
+        "details": {
+            "path": "DETAILS.md"
+        },
+        "license": {
+            "path": "LICENSE"
+        }
+    },
     "files": [
         {
             "path": "tasks/cargo"
         },
         {
             "path": "tasks/install"
+        },
+        {
+            "path": "tasks/rustup"
         }
     ],
     "contributions": [
@@ -43,6 +54,16 @@
             ],
             "properties": {
                 "name": "tasks/cargo"
+            }
+        },
+        {
+            "id": "rust-rustup",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/rustup"
             }
         }
     ]
