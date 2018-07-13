@@ -62,6 +62,8 @@ typings/
 
 #tsc
 src/**/*.js
+debug/**/*.js
+**/*.js.map
 
 #gulp
 tmp/
