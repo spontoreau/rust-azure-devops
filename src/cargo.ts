@@ -12,11 +12,7 @@ import process from "process";
 
 (async () => {
     try {
-        const cargoPath = path.join(os.homedir(), ".cargo", "bin");
-
-        process.env.PATH = process.env.PATH
-            ? cargoPath + path.delimiter + process.env.PATH
-            : cargoPath;
+        addCargoToPath();
 
         const commandInput = getInput("cargoCommand");
         const argsInput = getInput("cargoCommandArguments");
@@ -34,3 +30,10 @@ import process from "process";
         setResult(TaskResult.Failed, e.message);
     }
 })();
+
+function addCargoToPath() {
+    const cargoPath = path.join(os.homedir(), ".cargo", "bin");
+    process.env.PATH = process.env.PATH
+        ? cargoPath + path.delimiter + process.env.PATH
+        : cargoPath;
+}
