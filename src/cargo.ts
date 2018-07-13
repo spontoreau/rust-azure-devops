@@ -6,9 +6,7 @@ import {
     which,
 } from "vsts-task-lib";
 
-import os from "os";
-import path from "path";
-import process from "process";
+import addCargoToPath from "./common/addCargoToPath";
 
 (async () => {
     try {
@@ -31,9 +29,4 @@ import process from "process";
     }
 })();
 
-function addCargoToPath() {
-    const cargoPath = path.join(os.homedir(), ".cargo", "bin");
-    process.env.PATH = process.env.PATH
-        ? cargoPath + path.delimiter + process.env.PATH
-        : cargoPath;
-}
+
