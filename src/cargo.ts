@@ -12,23 +12,21 @@ import addCargoToPath from "./common/addCargoToPath";
     try {
         addCargoToPath();
 
-        const commandInput = getInput("cargoCommand");
-        const argsInput = getInput("cargoCommandArguments");
+        const command = getInput("cargoCommand");
+        const args = getInput("cargoCommandArguments");
 
-        await executeCommand(commandInput, argsInput);
+        await executeCommand(command, args);
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
     }
 })();
 
-
-
-async function executeCommand(commandInput: string, argsInput: string) {
-    const args = argsInput
-        ? [commandInput, ...argsInput.split(" ")]
-        : commandInput;
+async function executeCommand(command: string, args: string) {
+    const toolArgs = args
+        ? [command, ...args.split(" ")]
+        : command;
     which("cargo")
-        ? await await exec("cargo", args) > 0
+        ? await await exec("cargo", toolArgs) > 0
             ? setResult(TaskResult.Failed, "Error")
             : setResult(TaskResult.Succeeded, "Task done!")
         : setResult(TaskResult.Failed, "Cargo is not available");
