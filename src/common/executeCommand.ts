@@ -5,7 +5,11 @@ import {
     which,
 } from "vsts-task-lib";
 
+import addCargoToPath from "./addCargoToPath";
+
 export default async (command: string, args: string) => {
+    addCargoToPath();
+    
     const toolArgs = args
         ? [command, ...args.split(" ")]
         : command;
