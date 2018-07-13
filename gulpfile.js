@@ -9,7 +9,7 @@ const argv   = require('yargs').argv;
 const fs = require("fs");
 
 const now = new Date();
-const env = argv.release ? "" : "beta";
+const env = argv.release ? "" : "-beta";
 const buildNumber = argv.build ? argv.build : Date.now().toString();
 
 console.log(buildNumber);
@@ -43,7 +43,7 @@ gulp.task("copy", () => {
     const manifestCopyStream = gulp
                                 .src("./vss-extension.json")
                                 .pipe(jeditor((json) => {
-                                    json.id = `rust-vsts-${env}`;
+                                    json.id = `rust-vsts${env}`;
                                     json.version = json.version.replace("{buildNumber}", buildNumber);
                                     return json;
                                 }))
