@@ -7,7 +7,7 @@
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "compile": "tsc",
     "build": "gulp",
-    "package": "tfx extension create --manifest-globs ./tmp/vss-extension.json --output-path ./dist"
+    "package": "gulp pre-package && tfx extension create --root ./tmp --manifest-globs ./vss-extension.json --output-path ./dist"
   },
   "repository": {
     "type": "git",
