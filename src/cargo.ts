@@ -6,7 +6,6 @@ import {
     which,
 } from "vsts-task-lib";
 
-import addCargoToPath from "./common/addCargoToPath";
 import executeCommand from "./common/executeCommand";
 
 (async (command, args) => {
