@@ -9,15 +9,13 @@ import {
 import addCargoToPath from "./common/addCargoToPath";
 import executeCommand from "./common/executeCommand";
 
-(async () => {
+(async (command, args) => {
     try {
-        addCargoToPath();
-
-        const command = getInput("cargoCommand");
-        const args = getInput("cargoCommandArguments");
-
         await executeCommand(command, args);
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
     }
-})();
+})(
+    getInput("cargoCommand"), 
+    getInput("cargoCommandArguments"),
+);
