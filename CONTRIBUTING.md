@@ -85,7 +85,7 @@ To setup dependencies, execute "_install_" command of **npm**:
 $ npm install
 ```
 
-The project can be direcly built with the "_run compile_" command of **npm**:
+The project can be compile with the "_compile_" **npm** script:
 
 ```
 $ npm run compile
@@ -97,7 +97,21 @@ Code analysis need to succeed because of the continious integration. You can run
 $ npm run lint
 ```
 
-> ⚠️ Always ensure build and lint succeeded before commit some code
+> ⚠️ Always ensure compile and lint succeeded before commit some code
+
+To build the VSIX extension file, execute the "_build_" and "_package_" scripts:
+
+```
+$ npm run build
+$ npm run package
+```
+
+By default, the build script generate a _beta_ package and use the current date value to set a build number. Those information can be change by passing "_--release_" and "_--buildNumber_" arguments to the script:
+
+```
+$ npm run build -- --release --buildNumber 1
+$ npm run package
+```
 
 #### Commit
 
