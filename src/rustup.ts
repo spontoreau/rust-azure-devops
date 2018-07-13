@@ -8,7 +8,7 @@ import executeCommand from "./common/executeCommand";
 
 (async (command, args) => {
     try {
-        await executeCommand(command, args);
+        await executeCommand("rustup", command, args);
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
     }
@@ -16,4 +16,3 @@ import executeCommand from "./common/executeCommand";
     getInput("rustupCommand"),
     getInput("rustupCommandArguments"),
 );
-
