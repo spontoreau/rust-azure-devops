@@ -9,7 +9,7 @@ import addCargoToPath from "./addCargoToPath";
 
 export default async (command: string, args: string) => {
     addCargoToPath();
-    
+
     const toolArgs = args
         ? [command, ...args.split(" ")]
         : command;
@@ -19,4 +19,4 @@ export default async (command: string, args: string) => {
             ? setResult(TaskResult.Failed, "Error")
             : setResult(TaskResult.Succeeded, "Task done!")
         : setResult(TaskResult.Failed, "Cargo is not available");
-}
+};
