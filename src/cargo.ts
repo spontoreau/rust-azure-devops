@@ -16,6 +16,6 @@ import executeCommand from "./common/executeCommand";
         setResult(TaskResult.Failed, e.message);
     }
 })(
-    getInput("cargoCommand"), 
+    getInput("cargoCommand"),
     getInput("cargoCommandArguments"),
 );
