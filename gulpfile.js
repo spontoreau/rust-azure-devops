@@ -5,19 +5,15 @@ const runSequence = require("run-sequence");
 const rename = require("gulp-rename");
 const jeditor = require("gulp-json-editor");
 const run = require("gulp-run");
-const argv   = require('yargs').argv;
+const argv = require('yargs').argv;
 const fs = require("fs");
+const moment = require("moment");
 
-const now = new Date();
 const env = argv.release ? "" : "-beta";
-const buildNumber = argv.build ? argv.build : Date.now().toString();
+const buildNumber = argv.build ? argv.build : moment().format("YYDDDHHmm");;
 
-console.log(buildNumber);
+gulp.task("clean", () => del.sync("tmp"));
 
-//Clean
-gulp.task("clean", () => del("tmp"));
-
-//compile src
 gulp.task("compile", () => {
     const tscConfig = tsc.createProject("tsconfig.json", {
         target: "es2015",
@@ -29,36 +25,29 @@ gulp.task("compile", () => {
     return gulp
         .src(["./src/**/*.ts", '!./src/debug/**/*.*'])
         .pipe(tscConfig())
-        .on("error", (err) => process.exit(1))
+        .on("error", () => process.exit(1))
         .pipe(gulp.dest("./tmp/"));
 });
 
 gulp.task("copy", () => {
-    const streams = [];
+    const streams = [
+        gulp
+            .src(["./tasks/**/*.*"])
+            .pipe(gulp.dest("./tmp/tasks")),
+        gulp
+            .src("./vss-extension.json")
+            .pipe(jeditor((json) => {
+                json.id = `rust-vsts${env}`;
+                json.version = json.version.replace("{buildNumber}", buildNumber);
+                return json;
+            }))
+            .pipe(gulp.dest("./tmp/")),
+        gulp
+            .src(["./DETAILS.md", "./LICENSE", "./icon.png"])
+            .pipe(gulp.dest("./tmp/"))
+    ];
 
-    const tasksFilesCopyStream = gulp
-                            .src(["./tasks/**/*.*"])
-                            .pipe(gulp.dest("./tmp/tasks"));
-
-    const manifestCopyStream = gulp
-                                .src("./vss-extension.json")
-                                .pipe(jeditor((json) => {
-                                    json.id = `rust-vsts${env}`;
-                                    json.version = json.version.replace("{buildNumber}", buildNumber);
-                                    return json;
-                                }))
-                                .pipe(gulp.dest("./tmp/"));
-
-    const ressourceCopyStream = gulp
-                                .src(["./DETAILS.md", "./LICENSE", "./icon.png"])
-                                .pipe(gulp.dest("./tmp/"));
-
-    streams.push(tasksFilesCopyStream);
-    streams.push(manifestCopyStream);
-
-    const files = fs.readdirSync("./tmp/");
-
-    files.forEach((file) => {
+    fs.readdirSync("./tmp/").forEach((file) => {
         const source = `./tmp/${file}`;
         const stat = fs.statSync(source);
 
@@ -70,21 +59,21 @@ gulp.task("copy", () => {
                 .pipe(gulp.dest(target));
             streams.push(stream);
             streams.push(del(source));
+            streams.push(
+                gulp
+                    .src("./tmp/common/*.js")
+                    .pipe(gulp.dest(`${ target }/common`))
+            );
         }
     });
     return streams;
 });
 
 gulp.task("install", () => {
-    return [
-        run("npm install vsts-task-lib --prefix ./tmp/tasks/install").exec(),
-        run("npm install vsts-task-lib --prefix ./tmp/tasks/cargo").exec()
-    ]
+    return ["install", "cargo", "rustup"]
+        .map((vstsTask) => run(`npm install vsts-task-lib --prefix ./tmp/tasks/${vstsTask}`).exec());
 });
 
-gulp.task("package", () => {
-    return run("tfx extension create --manifest-globs ./tmp/vss-extension.json --output-path ./dist").exec()
-});
-
-//Default
 gulp.task("default", (cb) => runSequence("clean", "compile", "copy", "install", cb));
+
+gulp.task("pre-package", () => del("./tmp/common"));
