@@ -7,9 +7,10 @@ const jeditor = require("gulp-json-editor");
 const run = require("gulp-run");
 const argv = require('yargs').argv;
 const fs = require("fs");
+const moment = require("moment");
 
 const env = argv.release ? "" : "-beta";
-const buildNumber = argv.build ? argv.build : Date.now().toString();
+const buildNumber = argv.build ? argv.build : moment().format("YYDDDHHmm");;
 
 gulp.task("clean", () => del.sync("tmp"));
 
