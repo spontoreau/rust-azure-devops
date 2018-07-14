@@ -4,15 +4,13 @@
 ![status](https://img.shields.io/badge/status-wip-orange.svg) 
 ![marketplace](https://img.shields.io/badge/marketplace-private-red.svg)
 
-
-| Build   | Status  | 
-| ------- | ------- |
-| CI      | ![Build Status](https://spontoreau.visualstudio.com/d5f5ab40-dda9-46c8-8f62-1e8d2e3f7143/_apis/build/status/5) |
-| Tests   | ![Build Status](https://spontoreau.visualstudio.com/d5f5ab40-dda9-46c8-8f62-1e8d2e3f7143/_apis/build/status/4) |
-| Release | ![Build Status](https://spontoreau.visualstudio.com/d5f5ab40-dda9-46c8-8f62-1e8d2e3f7143/_apis/build/status/6) |
-
-
 > 🚧 This extension is a "work in progress". Don't use it for production propose, it can't be considered as stable yet.
+
+## Build status
+
+| CI | Tests  | Release |
+| -- | ------ | ------- |
+| ![Build Status](https://img.shields.io/vso/build/spontoreau/d5f5ab40-dda9-46c8-8f62-1e8d2e3f7143/5.svg) | ![Build Status](https://img.shields.io/vso/build/spontoreau/d5f5ab40-dda9-46c8-8f62-1e8d2e3f7143/4.svg) |![Build Status](https://img.shields.io/vso/build/spontoreau/d5f5ab40-dda9-46c8-8f62-1e8d2e3f7143/6.svg) |
 
 ## Contribution
 
