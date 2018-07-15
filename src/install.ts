@@ -1,13 +1,14 @@
 import {
     debug,
     exec,
+    getBoolInput,
     setResult,
     TaskResult,
     tool,
     which,
 } from "vsts-task-lib";
 
-(async () => {
+(async (installNightly: boolean) => {
     try {
         const returnCode = which("rustup")
                 ? await update()
@@ -16,7 +17,7 @@ import {
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
     }
-})();
+})(getBoolInput("installNightly"));
 
 async function downloadAndInstall() {
     debug("Rustup not available.");
