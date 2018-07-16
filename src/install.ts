@@ -7,9 +7,12 @@ import {
     tool,
     which,
 } from "vsts-task-lib";
+import addCargoToPath from "./common/addCargoToPath";
 
 (async (installNightly: boolean) => {
     try {
+        addCargoToPath();
+
         const returnCode = which("rustup")
                 ? await update()
                 : await downloadAndInstall();
