@@ -8,10 +8,27 @@
   "author": "Sylvain Pontoreau",
   "version": {
     "Major": 0,
-    "Minor": 1,
+    "Minor": 2,
     "Patch": 0
   },
   "instanceNameFormat": "Install",
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "Advanced",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [
+    {
+      "name": "installNightly",
+      "type": "boolean",
+      "label": "Install nightly",
+      "defaultValue": "false",
+      "required": true,
+      "groupName": "advanced"
+    }
+  ],
   "execution": {
     "Node": {
       "target": "index.js"
