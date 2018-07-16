@@ -8,6 +8,7 @@ import {
     which,
 } from "vsts-task-lib";
 import addCargoToPath from "./common/addCargoToPath";
+import executeCommand from "./common/executeCommand";
 
 (async (installNightly: boolean) => {
     try {
@@ -16,7 +17,14 @@ import addCargoToPath from "./common/addCargoToPath";
         const returnCode = which("rustup")
                 ? await update()
                 : await downloadAndInstall();
-        setUpdateResult(returnCode);
+
+        if(installNightly) {
+            await executeCommand("rustup", "install", "nightly");
+            await executeCommand("rustup", "default", "nightly");
+            setResult(TaskResult.Succeeded, "Rust nightly installed");
+        } else {
+            setUpdateResult(returnCode);
+        }        
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
     }
