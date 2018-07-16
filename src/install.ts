@@ -18,13 +18,13 @@ import executeCommand from "./common/executeCommand";
                 ? await update()
                 : await downloadAndInstall();
 
-        if(installNightly) {
+        if (installNightly) {
             await executeCommand("rustup", "install", "nightly");
             await executeCommand("rustup", "default", "nightly");
             setResult(TaskResult.Succeeded, "Rust nightly installed");
         } else {
             setUpdateResult(returnCode);
-        }        
+        }
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
     }
