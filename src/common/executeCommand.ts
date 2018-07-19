@@ -9,7 +9,7 @@ import addCargoToPath from "./addCargoToPath";
 
 export default async (tool: string, command: string, args: string) => {
     if (!tool || !command) {
-        Promise.reject(new Error(`${ tool ? "'tool'" : "'command'" } argument is required`));
+        return Promise.reject(new Error(`${ !tool ? "'tool'" : "'command'" } argument is required`));
     }
 
     addCargoToPath();
