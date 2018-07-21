@@ -1,0 +1,36 @@
+{
+  "id": "18d516da-1248-4d44-9bc7-5cfaed4f0591",
+  "name": "Rust compiler",
+  "friendlyName": "Rustc",
+  "description": "Compile a Rust file",
+  "helpMarkdown": "More information on Rust [documentation](https://www.rust-lang.org)",
+  "category": "Build",
+  "author": "Sylvain Pontoreau",
+  "version": {
+    "Major": 0,
+    "Minor": 1,
+    "Patch": 0
+  },
+  "instanceNameFormat": "Rustc",
+  "inputs": [
+    {
+      "name": "rustcInput",
+      "type": "filePath",
+      "label": "Rust file (.rs)",
+      "defaultValue": "",
+      "required": true
+    },
+    {
+      "name": "rustcOptions",
+      "type": "string",
+      "label": "Options",
+      "defaultValue": "",
+      "required": false
+    }
+  ],
+  "execution": {
+    "Node": {
+      "target": "index.js"
+    }
+  }
+}
