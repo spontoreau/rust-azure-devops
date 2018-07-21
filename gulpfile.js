@@ -70,7 +70,7 @@ gulp.task("copy", () => {
 });
 
 gulp.task("install", () => {
-    return ["install", "cargo", "rustup"]
+    return ["install", "cargo", "rustup", "rustc"]
         .map((vstsTask) => run(`npm install vsts-task-lib --prefix ./tmp/tasks/${vstsTask}`).exec());
 });
 

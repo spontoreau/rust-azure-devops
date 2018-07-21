@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "rust-vsts",
-    "version": "0.3.{buildNumber}",
+    "version": "0.4.{buildNumber}",
     "name": "Rust",
     "description": "Rust extension for Visual Studio Team Services",
     "publisher": "spontoreau",
@@ -33,6 +33,9 @@
         },
         {
             "path": "tasks/rustup"
+        },
+        {
+            "path": "tasks/rustc"
         }
     ],
     "contributions": [
@@ -64,6 +67,16 @@
             ],
             "properties": {
                 "name": "tasks/rustup"
+            }
+        },
+        {
+            "id": "rust-rustc",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/rustc"
             }
         }
     ]
