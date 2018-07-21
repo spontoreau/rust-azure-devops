@@ -1,0 +1,12 @@
+{
+    "name": "rust-vsts-rustc",
+    "version": "1.0.0",
+    "description": "Rustc",
+    "main": "index.js",
+    "author": "Sylvain Pontoreau",
+    "license": "MIT",
+    "dependencies": {
+      "vsts-task-lib": "^2.5.0"
+    }
+  }
+  
