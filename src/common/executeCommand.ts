@@ -7,7 +7,7 @@ import {
 
 import addCargoToPath from "./addCargoToPath";
 
-export default async (tool: string, command: string, args: string) => {
+export default async (tool: string, command: string, args: string, isInput: boolean = false) => {
     if (!tool || !command) {
         return Promise.reject(new Error(`${ !tool ? "'tool'" : "'command'" } argument is required`));
     }
@@ -15,7 +15,9 @@ export default async (tool: string, command: string, args: string) => {
     addCargoToPath();
 
     const toolArgs = args
-        ? [command, ...args.split(" ")]
+        ? isInput
+            ? [...args.split(" "), command]
+            : [command, ...args.split(" ")]
         : command;
 
     return which("cargo")
