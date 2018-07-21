@@ -33,6 +33,9 @@
         },
         {
             "path": "tasks/rustup"
+        },
+        {
+            "path": "tasks/rustc"
         }
     ],
     "contributions": [
@@ -64,6 +67,16 @@
             ],
             "properties": {
                 "name": "tasks/rustup"
+            }
+        },
+        {
+            "id": "rust-rustc",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "tasks/rustc"
             }
         }
     ]
