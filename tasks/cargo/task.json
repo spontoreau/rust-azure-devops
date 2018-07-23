@@ -5,10 +5,6 @@
   "description": "Execute a command with Cargo, the Rust package manager.",
   "helpMarkdown": "For more information about Cargo, take a look at the official [documentation](https://doc.rust-lang.org/cargo/)",
   "category": "Build",
-  "visibility": [
-    "Build",
-    "Release"
-  ],
   "author": "Sylvain Pontoreau",
   "version": {
     "Major": 1,
