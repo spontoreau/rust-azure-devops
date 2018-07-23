@@ -1,14 +1,17 @@
 {
   "id": "b70cb8a6-a834-45de-a1db-d06725850453",
-  "name": "Rustup command",
+  "name": "Rustup",
   "friendlyName": "Rustup",
-  "description": "Execute a Rustup command",
-  "helpMarkdown": "More information in Rustup [documentation](https://rustup.rs)",
-  "category": "Utility",
+  "description": "Execute a command with Rustup, the Rust toolchain installer.",
+  "helpMarkdown": "For more information about Rustup, take a look at the official [documentation](https://rustup.rs)",
+  "category": "Tool",
+  "visibility": [
+    "Tool"
+  ],
   "author": "Sylvain Pontoreau",
   "version": {
-    "Major": 0,
-    "Minor": 1,
+    "Major": 1,
+    "Minor": 0,
     "Patch": 0
   },
   "instanceNameFormat": "Rustup",
@@ -17,13 +20,13 @@
       "name": "rustupCommand",
       "type": "string",
       "label": "Command",
-      "defaultValue": "",
+      "defaultValue": "Rustup command to execute (example: update, default, target...)",
       "required": true
     }, {
       "name": "rustupCommandArguments",
       "type": "string",
       "label": "Arguments",
-      "defaultValue": "",
+      "defaultValue": "Command arguments (add -v to use verbose output).",
       "required": false
     }
   ],
