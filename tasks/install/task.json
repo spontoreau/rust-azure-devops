@@ -2,12 +2,9 @@
   "id": "4dbd481f-fc50-4668-99a7-dbb2eae74bd8",
   "name": "Rust",
   "friendlyName": "Rust Tool Installer",
-  "description": "Install the latest version of Rust",
+  "description": "Install the latest version of Rust.",
   "helpMarkdown": "For more information, take a look at the Rustup [documentation](https://rustup.rs)",
   "category": "Tool",
-  "visibility": [
-    "Tool"
-  ],
   "author": "Sylvain Pontoreau",
   "version": {
     "Major": 1,

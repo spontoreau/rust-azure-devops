@@ -29,7 +29,8 @@
       "name": "cargoCommandOptions",
       "type": "string",
       "label": "Options",
-      "defaultValue": "Command options (add -v to use verbose output).",
+      "helpMarkDown": "Command options (add -v to use verbose output).",
+      "defaultValue": "",
       "required": false
     }
   ],
