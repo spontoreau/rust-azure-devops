@@ -1,20 +1,31 @@
 {
     "manifestVersion": 1,
     "id": "rust-vsts",
-    "version": "0.4.{buildNumber}",
+    "version": "1.0.{buildNumber}",
     "name": "Rust",
     "description": "Rust extension for Visual Studio Team Services",
     "publisher": "spontoreau",
     "targets": [
         {
-            "id": "Microsoft.VisualStudio.Services"
+            "id": "Microsoft.VisualStudio.Services.Cloud"
         }
+    ],
+    "categories": [
+        "Build and release"
     ],
     "icons": {
         "default": "icon.png"
     },
-    "scopes": [
-        "vso.work"
+    "screenshots": [
+        {
+            "path": "images/screenshot-tasks.png"
+        },
+        {
+            "path": "images/screenshot-cargo.png"
+        },
+        {
+            "path": "images/screenshot-install.png"
+        }
     ],
     "content": {
         "details": {
@@ -24,6 +35,22 @@
             "path": "LICENSE"
         }
     },
+    "links": {
+        "support": {
+            "uri": "https://github.com/spontoreau/rust-vsts/issues"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/spontoreau/rust-vsts"
+    },
+    "tags": [
+        "rust",
+        "cargo",
+        "rustup",
+        "rustc",
+        "build"
+    ],
     "files": [
         {
             "path": "tasks/cargo"
@@ -36,6 +63,10 @@
         },
         {
             "path": "tasks/rustc"
+        },
+        {
+            "path": "images",
+            "addressable": true
         }
     ],
     "contributions": [

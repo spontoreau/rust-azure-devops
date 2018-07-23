@@ -30,10 +30,10 @@
   },
   "homepage": "https://github.com/spontoreau/rust-vsts#readme",
   "dependencies": {
-    "vsts-task-lib": "^2.5.0"
+    "vsts-task-lib": "^2.6.0"
   },
   "devDependencies": {
-    "@types/node": "^10.5.1",
+    "@types/node": "^10.5.2",
     "@types/q": "^1.5.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
@@ -43,8 +43,8 @@
     "gulp-typescript": "^5.0.0-alpha.3",
     "moment": "^2.22.2",
     "run-sequence": "^2.2.1",
-    "tfx-cli": "^0.5.12",
-    "tslint": "^5.10.0",
+    "tfx-cli": "^0.5.14",
+    "tslint": "^5.11.0",
     "typescript": "^2.9.2",
     "yargs": "^12.0.1"
   }

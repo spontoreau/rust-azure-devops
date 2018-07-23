@@ -1,17 +1,17 @@
 {
   "id": "4dbd481f-fc50-4668-99a7-dbb2eae74bd8",
-  "name": "Install Rust",
-  "friendlyName": "Install",
-  "description": "Install latest version of Rust with Rustup",
-  "helpMarkdown": "More information in Rustup [documentation](https://rustup.rs)",
-  "category": "Utility",
+  "name": "Rust",
+  "friendlyName": "Rust Tool Installer",
+  "description": "Install the latest version of Rust.",
+  "helpMarkdown": "For more information, take a look at the Rustup [documentation](https://rustup.rs)",
+  "category": "Tool",
   "author": "Sylvain Pontoreau",
   "version": {
-    "Major": 0,
-    "Minor": 2,
+    "Major": 1,
+    "Minor": 0,
     "Patch": 0
   },
-  "instanceNameFormat": "Install",
+  "instanceNameFormat": "Rust Tool Installer",
   "groups": [
     {
       "name": "advanced",
@@ -24,6 +24,7 @@
       "name": "installNightly",
       "type": "boolean",
       "label": "Install nightly",
+      "helpMarkDown": "Access to the nightly compiler and its experimental features.",
       "defaultValue": "false",
       "required": true,
       "groupName": "advanced"

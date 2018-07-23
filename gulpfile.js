@@ -32,7 +32,7 @@ gulp.task("compile", () => {
 gulp.task("copy", () => {
     const streams = [
         gulp
-            .src(["./tasks/**/*.*"])
+            .src("./tasks/**/*.*")
             .pipe(gulp.dest("./tmp/tasks")),
         gulp
             .src("./vss-extension.json")
@@ -44,7 +44,10 @@ gulp.task("copy", () => {
             .pipe(gulp.dest("./tmp/")),
         gulp
             .src(["./DETAILS.md", "./LICENSE", "./icon.png"])
-            .pipe(gulp.dest("./tmp/"))
+            .pipe(gulp.dest("./tmp/")),
+        gulp
+            .src("./images/*.png")
+            .pipe(gulp.dest("./tmp/images/"))
     ];
 
     fs.readdirSync("./tmp/").forEach((file) => {

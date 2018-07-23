@@ -1,12 +1,12 @@
 {
     "name": "rust-vsts-install",
     "version": "1.0.0",
-    "description": "Install Rust",
+    "description": "Visual Studio Team Services task that allows developers to install Rust.",
     "main": "index.js",
     "author": "Sylvain Pontoreau",
     "license": "MIT",
     "dependencies": {
-      "vsts-task-lib": "^2.5.0"
+      "vsts-task-lib": "^2.6.0"
     }
   }
   
