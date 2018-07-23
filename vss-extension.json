@@ -16,6 +16,17 @@
     "icons": {
         "default": "icon.png"
     },
+    "screenshots": [
+        {
+            "path": "screenshots/tasks.png"
+        },
+        {
+            "path": "screenshots/cargo.png"
+        },
+        {
+            "path": "screenshots/install.png"
+        }
+    ],
     "content": {
         "details": {
             "path": "DETAILS.md"
@@ -29,12 +40,6 @@
             "uri": "https://github.com/spontoreau/rust-vsts"
         },
         "support": {
-            "uri": "https://github.com/spontoreau/rust-vsts/issues"
-        },
-        "repository": {
-            "uri": "https://github.com/spontoreau/rust-vsts"
-        },
-        "issues": {
             "uri": "https://github.com/spontoreau/rust-vsts/issues"
         }
     },
