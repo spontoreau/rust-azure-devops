@@ -46,8 +46,8 @@ gulp.task("copy", () => {
             .src(["./DETAILS.md", "./LICENSE", "./icon.png"])
             .pipe(gulp.dest("./tmp/")),
         gulp
-            .src("./screenshots/*.png")
-            .pipe(gulp.dest("./tmp/screenshots/"))
+            .src("./images/*.png")
+            .pipe(gulp.dest("./tmp/images/"))
     ];
 
     fs.readdirSync("./tmp/").forEach((file) => {
