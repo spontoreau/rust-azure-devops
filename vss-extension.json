@@ -18,13 +18,13 @@
     },
     "screenshots": [
         {
-            "path": "screenshots/tasks.png"
+            "path": "images/screenshot-tasks.png"
         },
         {
-            "path": "screenshots/cargo.png"
+            "path": "images/screenshot-cargo.png"
         },
         {
-            "path": "screenshots/install.png"
+            "path": "images/screenshot-install.png"
         }
     ],
     "content": {
