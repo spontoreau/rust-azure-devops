@@ -5,9 +5,9 @@ const cargoCommandInput = {
     value: "search" 
 };
 
-const cargoCommandArgsInput = { 
-    name: "cargoCommandArguments", 
+const cargoCommandOptionsInput = { 
+    name: "cargoCommandOptions", 
     value: "rocket --limit 1" 
 };
 
-debug("cargo.js", cargoCommandInput, cargoCommandArgsInput);
+debug("cargo.js", cargoCommandInput, cargoCommandOptionsInput);
