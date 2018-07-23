@@ -8,14 +8,14 @@ import {
 
 import executeCommand from "./common/executeCommand";
 
-(async (command, args) => {
+(async (command, options) => {
     try {
-        await executeCommand("cargo", command, args);
+        await executeCommand("cargo", command, options);
         setResult(TaskResult.Succeeded, "Task done!");
     } catch (e) {
         setResult(TaskResult.Failed, e.message);
     }
 })(
     getInput("cargoCommand"),
-    getInput("cargoCommandArguments"),
+    getInput("cargoCommandOptions"),
 );

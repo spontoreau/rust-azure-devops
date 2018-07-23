@@ -1,14 +1,17 @@
 {
   "id": "18d516da-1248-4d44-9bc7-5cfaed4f0591",
-  "name": "Rust compiler",
+  "name": "Rustc",
   "friendlyName": "Rustc",
-  "description": "Compile a Rust file",
-  "helpMarkdown": "More information on Rust [documentation](https://www.rust-lang.org)",
+  "description": "Compile a Rust file (.rs).",
+  "helpMarkdown": "For more information about Rust compiler, take a look at the official [documentation](https://www.rust-lang.org)",
   "category": "Build",
+  "visibility": [
+    "Build"
+  ],
   "author": "Sylvain Pontoreau",
   "version": {
-    "Major": 0,
-    "Minor": 1,
+    "Major": 1,
+    "Minor": 0,
     "Patch": 0
   },
   "instanceNameFormat": "Rustc",
@@ -16,7 +19,8 @@
     {
       "name": "rustcInput",
       "type": "filePath",
-      "label": "Rust file (.rs)",
+      "label": "File",
+      "helpMarkDown": "Rust file to compile (.rs).",
       "defaultValue": "",
       "required": true
     },
@@ -24,6 +28,7 @@
       "name": "rustcOptions",
       "type": "string",
       "label": "Options",
+      "helpMarkDown": "Compiler options (add -v to use verbose output).",
       "defaultValue": "",
       "required": false
     }

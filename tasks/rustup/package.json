@@ -1,12 +1,12 @@
 {
     "name": "rust-vsts-rustup",
     "version": "1.0.0",
-    "description": "Rustup command",
+    "description": "Visual Studio Team Services task that allows developers to execute a command with Rustup, the Rust toolchain installer.",
     "main": "index.js",
     "author": "Sylvain Pontoreau",
     "license": "MIT",
     "dependencies": {
-      "vsts-task-lib": "^2.5.0"
+      "vsts-task-lib": "^2.6.0"
     }
   }
   

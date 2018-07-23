@@ -1,12 +1,12 @@
 {
     "name": "rust-vsts-cargo",
     "version": "1.0.0",
-    "description": "Cargo command",
+    "description": "Visual Studio Team Services task that allows developers to execute a command with Cargo, the Rust package manager.",
     "main": "index.js",
     "author": "Sylvain Pontoreau",
     "license": "MIT",
     "dependencies": {
-      "vsts-task-lib": "^2.5.0"
+      "vsts-task-lib": "^2.6.0"
     }
   }
   
