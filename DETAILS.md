@@ -1,7 +1,7 @@
-Rust
+Rust 🦀
 ===
 
-This extension contains tasks that can be used to deal with **Rust** projects.
+This extension contains tasks that can be used to manage **Rust** projects.
 
 **Rust** is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. For more information on **Rust**, take a look at the official [documentation](https://www.rust-lang.org).
 
@@ -9,7 +9,7 @@ This extension contains tasks that can be used to deal with **Rust** projects.
 
 The extension adds the **Rust Tool Installer** task inside the **Tool** category. It installs **rustup** and the latest version of the **Rust** toolchain. Always ensure you have run this task first, other tasks need it to run.
 
-By default, the task will install the latest stable version. You can also install the **nightly** version by changing the advanced settings:
+By default, the task will install the latest stable version. You can also install the **nightly** one by changing the advanced settings:
 
 ![Nightly](images/doc-rust-installer-task.png)
 
@@ -30,10 +30,16 @@ The extension also contains:
 
 ![Rustup & Rustc](images/doc-other-tasks.png)
 
-Those tasks can be used in the same way as the Cargo one.
+Those tasks can be used in the same way as the **Cargo** one.
 
 ## Features and bugs
 
-You've got a feature request? You found a bug?
+You've got a feature request? You found a bug? 
 
 Don't hesitate to create an issue on [github](https://github.com/spontoreau/rust-vsts)!
+
+## Like this extension?
+
+- Don't forget to add a ⭐️ on [Github](https://github.com/spontoreau/rust-vsts)
+- You can also ✍️ a review!
+- Or share it on Twitter (cc @spontoreau)
