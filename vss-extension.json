@@ -7,7 +7,7 @@
     "publisher": "spontoreau",
     "targets": [
         {
-            "id": "Microsoft.VisualStudio.Services"
+            "id": "Microsoft.VisualStudio.Services.Cloud"
         }
     ],
     "categories": [
