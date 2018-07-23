@@ -36,12 +36,13 @@
         }
     },
     "links": {
-        "getstarted": {
-            "uri": "https://github.com/spontoreau/rust-vsts"
-        },
         "support": {
             "uri": "https://github.com/spontoreau/rust-vsts/issues"
         }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/spontoreau/rust-vsts"
     },
     "tags": [
         "rust",
