@@ -20,13 +20,15 @@
       "name": "rustupCommand",
       "type": "string",
       "label": "Command",
-      "defaultValue": "Rustup command to execute (example: update, default, target...)",
+      "helpMarkDown": "Rustup command to execute (example: update, default, target...)",
+      "defaultValue": "",
       "required": true
     }, {
       "name": "rustupCommandArguments",
       "type": "string",
       "label": "Arguments",
-      "defaultValue": "Command arguments (add -v to use verbose output).",
+      "helpMarkDown": "Command arguments (add -v to use verbose output).",
+      "defaultValue": "",
       "required": false
     }
   ],
