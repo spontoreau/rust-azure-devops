@@ -1,14 +1,18 @@
 {
   "id": "96659c5d-6c35-43ec-bb2e-fe1b206931b3",
-  "name": "Cargo command",
+  "name": "Cargo",
   "friendlyName": "Cargo",
-  "description": "Execute a Cargo command",
-  "helpMarkdown": "More information in the Cargo [documentation](https://doc.rust-lang.org/cargo/)",
+  "description": "Execute a command with Cargo, the Rust package manager.",
+  "helpMarkdown": "For more information about Cargo, take a look at the official documentation (https://doc.rust-lang.org/cargo/)",
   "category": "Build",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
   "author": "Sylvain Pontoreau",
   "version": {
-    "Major": 0,
-    "Minor": 1,
+    "Major": 1,
+    "Minor": 0,
     "Patch": 0
   },
   "instanceNameFormat": "Cargo",
@@ -17,13 +21,15 @@
       "name": "cargoCommand",
       "type": "string",
       "label": "Command",
+      "helpMarkDown": "Cargo command to execute (example: build, test, update, install, doc...)",
       "defaultValue": "",
       "required": true
-    }, {
-      "name": "cargoCommandArguments",
+    },
+    {
+      "name": "cargoCommandOptions",
       "type": "string",
-      "label": "Arguments",
-      "defaultValue": "",
+      "label": "Options",
+      "defaultValue": "Command options (add -v to use verbose output).",
       "required": false
     }
   ],
