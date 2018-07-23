@@ -5,9 +5,6 @@
   "description": "Execute a command with Rustup, the Rust toolchain installer.",
   "helpMarkdown": "For more information about Rustup, take a look at the official [documentation](https://rustup.rs)",
   "category": "Tool",
-  "visibility": [
-    "Tool"
-  ],
   "author": "Sylvain Pontoreau",
   "version": {
     "Major": 1,
