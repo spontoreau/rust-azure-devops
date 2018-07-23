@@ -1,7 +1,7 @@
 # Contributing
 
 Congratulations, you are going to contribute to the **rust-vsts** repository.
-First of all, we want to thank you for spending time to improve this project!
+First of all, I want to thank you for spending time to improve this project 🙏!
 
 ## Table Of Contents
 
@@ -22,7 +22,7 @@ First of all, we want to thank you for spending time to improve this project!
 
 The following guidelines ensure your contributions respect the project philosophy, design, conventions and rules.
 
-> ⚠️ Please don't create an issue for questions. It easier to directly contact the team on [Slack](https://join.slack.com/t/rust-vsts-extension/shared_invite/enQtMzkxNzU4MTgyMDg2LTlkMjJmMzM2MmIyYmJmMjFmNDJkN2IzZmMxZDFhZTgyOGFjYWExNTkwM2YwYTQ3YmI3OWNlYjBhYjcyNGY5OTM), inside general channel. Thanks for your understanding 🙏!
+> ℹ️ You can talk about this project on [Slack](https://join.slack.com/t/rust-vsts-extension/shared_invite/enQtMzkxNzU4MTgyMDg2LTlkMjJmMzM2MmIyYmJmMjFmNDJkN2IzZmMxZDFhZTgyOGFjYWExNTkwM2YwYTQ3YmI3OWNlYjBhYjcyNGY5OTM)
 
 ## <a id="how-to-contribute"></a>❓ How to contribute
 
@@ -106,10 +106,10 @@ $ npm run build
 $ npm run package
 ```
 
-By default, the build script generate a _beta_ package and use the current date value to set a build number. Those information can be change by passing "_--release_" and "_--buildNumber_" arguments to the script:
+By default, the build script generate a _beta_ package and use the current date value to set a build number. Those information can be change by passing "_--release_" and "_--build_" arguments to the script:
 
 ```
-$ npm run build -- --release --buildNumber 1
+$ npm run build -- --release --build 1
 $ npm run package
 ```
 
