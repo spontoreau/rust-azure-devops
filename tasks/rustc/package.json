@@ -1,7 +1,7 @@
 {
     "name": "rust-vsts-rustc",
     "version": "1.0.0",
-    "description": "VSTS task that allows developers to compile a Rust file (.rs).",
+    "description": "Visual Studio Team Services task that allows developers to compile a Rust file (.rs).",
     "main": "index.js",
     "author": "Sylvain Pontoreau",
     "license": "MIT",

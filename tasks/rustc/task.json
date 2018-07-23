@@ -19,7 +19,8 @@
     {
       "name": "rustcInput",
       "type": "filePath",
-      "label": "Rust file to compile (.rs)",
+      "label": "File",
+      "helpMarkDown": "Rust file to compile (.rs).",
       "defaultValue": "",
       "required": true
     },
@@ -27,7 +28,8 @@
       "name": "rustcOptions",
       "type": "string",
       "label": "Options",
-      "defaultValue": "Compiler options (add -v to use verbose output).",
+      "helpMarkDown": "Compiler options (add -v to use verbose output).",
+      "defaultValue": "",
       "required": false
     }
   ],
