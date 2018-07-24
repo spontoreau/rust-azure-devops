@@ -5,9 +5,6 @@
   "description": "Compile a Rust file (.rs).",
   "helpMarkdown": "For more information about Rust compiler, take a look at the official [documentation](https://www.rust-lang.org)",
   "category": "Build",
-  "visibility": [
-    "Build"
-  ],
   "author": "Sylvain Pontoreau",
   "version": {
     "Major": 1,
