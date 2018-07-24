@@ -108,10 +108,10 @@ $ npm run build
 $ npm run package
 ```
 
-By default, the build script generate a _beta_ package and use the current date value to set a build number. Those information can be change by passing "_--release_" and "_--build_" arguments to the script:
+By default, the build script generate a _beta_ package and use the current date value to set the patch number. Those information can be change by passing "_--release_" and "_--patch_" arguments to the script:
 
 ```
-$ npm run build -- --release --build 1
+$ npm run build -- --release --patch 1
 $ npm run package
 ```
 
