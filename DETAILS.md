@@ -7,7 +7,7 @@ This extension contains tasks that can be used to manage **Rust** projects.
 
 ## Rust Tool Installer
 
-The extension adds the **Rust Tool Installer** task inside the **Tool** category. It installs **rustup** and the latest version of the **Rust** toolchain. Always ensure you have run this task first, other tasks need it to run.
+The extension adds the **Rust Tool Installer** task inside the **Tool** category. It installs **rustup** and the latest version of the **Rust** toolchain. Always ensure you have run this task first, others need it to run.
 
 By default, the task will install the latest stable version. You can also install the **nightly** one by changing the advanced settings:
 
@@ -19,7 +19,7 @@ By default, the task will install the latest stable version. You can also instal
 
 ![Rustup & Rustc](images/doc-cargo-task.png)
 
-Parameters include:
+Parameters:
 
 - **Command**: Cargo subcommand to execute (example: build, test, update, install, doc...).
 - **Options**: Subcommand options (optional).
@@ -41,5 +41,5 @@ Don't hesitate to create an issue on [github](https://github.com/spontoreau/rust
 ## Like this extension?
 
 - Don't forget to add a ⭐️ on [Github](https://github.com/spontoreau/rust-vsts)
-- You can also ✍️ a review!
-- Or share it on Twitter (cc @spontoreau)
+- You can also ✍️ a [review](https://marketplace.visualstudio.com/items?itemName=spontoreau.rust-vsts#review-details)!
+- Or share it on Twitter (cc [@spontoreau](https://twitter.com/spontoreau))
