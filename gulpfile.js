@@ -40,6 +40,7 @@ gulp.task("copy", () => {
             .src("./vss-extension.json")
             .pipe(jeditor((json) => {
                 json.id = `rust-vsts${env}`;
+                json.name = `Rust${env}`;
                 json.version = json.version.replace("{patch}", patch);
                 return json;
             }))
