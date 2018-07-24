@@ -5,6 +5,7 @@
     "name": "Rust",
     "description": "Rust extension for Visual Studio Team Services",
     "publisher": "spontoreau",
+    "public": true,
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services.Cloud"
