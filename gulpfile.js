@@ -10,7 +10,9 @@ const fs = require("fs");
 const moment = require("moment");
 
 const env = argv.release ? "" : "-beta";
-const buildNumber = argv.build ? argv.build : moment().format("YYDDDHHmm");;
+const patch = (argv.patch !== null && argv.patch !== undefined)
+                ? argv.patch 
+                : moment().format("YYDDDHHmm");;
 
 gulp.task("clean", () => del.sync("tmp"));
 
@@ -38,7 +40,7 @@ gulp.task("copy", () => {
             .src("./vss-extension.json")
             .pipe(jeditor((json) => {
                 json.id = `rust-vsts${env}`;
-                json.version = json.version.replace("{buildNumber}", buildNumber);
+                json.version = json.version.replace("{patch}", patch);
                 return json;
             }))
             .pipe(gulp.dest("./tmp/")),
