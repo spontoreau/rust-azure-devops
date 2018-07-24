@@ -41,6 +41,7 @@ gulp.task("copy", () => {
             .pipe(jeditor((json) => {
                 json.id = `rust-vsts${env}`;
                 json.name = `Rust${env}`;
+                json.public = env ? false : true;
                 json.version = json.version.replace("{patch}", patch);
                 return json;
             }))
