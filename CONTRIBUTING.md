@@ -13,6 +13,8 @@ First of all, I want to thank you for spending time to improve this project 🙏
 * [Features](#features)
 * [Pull Requests](#pull-requests)
 
+[Debug](#debug)
+
 [Conventions](#conventions)
 
 * [Code](#code)
@@ -150,6 +152,12 @@ $ git push {origin} feature/{featureNameOrIssueId}
 If a Pull requests resolve an issue, include it inside the description. When approved by reviewers, pull request are merged into the "_master_" branch.
 
 > ⚠️ To be reviewed, CI process must succeeded
+
+## <a id="debug"></a>🔬 Debug
+
+Debug can be done by running files inside the debug folder with Node.js.
+
+VS Code debug configuration allows you to launch the debugger from any of those files.
 
 ## <a id="conventions"></a>Conventions
 
