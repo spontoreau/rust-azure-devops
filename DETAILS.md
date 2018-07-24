@@ -36,7 +36,7 @@ Those tasks can be used in the same way as the **Cargo** one.
 
 You've got a feature request? You found a bug? 
 
-Don't hesitate to create an issue on [github](https://github.com/spontoreau/rust-vsts)!
+Don't hesitate to create an issue on [github](https://github.com/spontoreau/rust-vsts/issues)!
 
 ## Like this extension?
 
