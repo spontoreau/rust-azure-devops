@@ -1,7 +1,7 @@
 {
-  "name": "rust-vsts",
+  "name": "rust-azure-devops",
   "version": "1.0.0",
-  "description": "Rust extension for Visual Studio Team Services",
+  "description": "Rust extension for Azure DevOps",
   "main": "index.js",
   "scripts": {
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
@@ -12,23 +12,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spontoreau/rust-vsts.git"
+    "url": "git+https://github.com/spontoreau/rust-azure-devops.git"
   },
   "keywords": [
     "rust",
     "rust language",
     "cargo",
     "build",
-    "vsts",
+    "azure devops",
+    "azure",
+    "devops",
     "ci",
     "continious integration"
   ],
   "author": "Sylvain Pontoreau",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/spontoreau/rust-vsts/issues"
+    "url": "https://github.com/spontoreau/rust-azure-devops/issues"
   },
-  "homepage": "https://github.com/spontoreau/rust-vsts#readme",
+  "homepage": "https://github.com/spontoreau/rust-azure-devops#readme",
   "dependencies": {
     "vsts-task-lib": "^2.6.0"
   },
