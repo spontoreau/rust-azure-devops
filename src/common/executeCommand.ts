@@ -1,7 +1,5 @@
 import {
     exec,
-    setResult,
-    TaskResult,
     which,
 } from "vsts-task-lib";
 
