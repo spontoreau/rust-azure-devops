@@ -1,6 +1,6 @@
 # Contributing
 
-Congratulations, you are going to contribute to the **rust-vsts** repository.
+Congratulations, you are going to contribute to the **rust-azure-devops** repository.
 First of all, I want to thank you for spending time to improve this project 🙏!
 
 ## Table Of Contents
@@ -30,9 +30,9 @@ The following guidelines ensure your contributions respect the project philosoph
 
 ### <a id="bugs"></a>🐛 Bugs
 
-Bug reports are one of the contributions you can do on **rust-vsts** project.
+Bug reports are one of the contributions you can do on **rust-azure-devops** project.
 
-First, ensure your bug isn't listed in [issues](https://github.com/spontoreau/rust-vsts/issues). It is better to contribute to an existing issue instead of creating a new one. It's really important that you respect a specific format for your bug reports. This provides an optimal reading for contributors and ease the implementation of fixes:
+First, ensure your bug isn't listed in [issues](https://github.com/spontoreau/rust-azure-devops/issues). It is better to contribute to an existing issue instead of creating a new one. It's really important that you respect a specific format for your bug reports. This provides an optimal reading for contributors and ease the implementation of fixes:
 
 ```markdown
 ### Description
@@ -67,9 +67,9 @@ If a bug can be cover with an unit test, you are more than welcome to write it! 
 
 Features can add some new capabilities to the project.
 
-First, ensure your feature isn't listed in [issues](https://github.com/spontoreau/rust-vsts/issues).
+First, ensure your feature isn't listed in [issues](https://github.com/spontoreau/rust-azure-devops/issues).
 
-A feature must be created as a proposal for discussion with the community. When an agreement is found, the proposal is added as a feature inside a [project](https://github.com/spontoreau/rust-vsts/projects). A feature can be considered too large to be a single card in a project. If so, the team can decide to create the feature as a project and split it into multiples small features (for an easier integration inside the project).
+A feature must be created as a proposal for discussion with the community. When an agreement is found, the proposal is added as a feature inside a [project](https://github.com/spontoreau/rust-azure-devops/projects). A feature can be considered too large to be a single card in a project. If so, the team can decide to create the feature as a project and split it into multiples small features (for an easier integration inside the project).
 
 ### <a id="pull-requests"></a>🎁 Pull Requests
 
