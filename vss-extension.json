@@ -1,9 +1,9 @@
 {
     "manifestVersion": 1,
-    "id": "rust-vsts",
+    "id": "rust-azure-devops",
     "version": "1.0.{patch}",
     "name": "Rust",
-    "description": "Rust extension for Visual Studio Team Services",
+    "description": "Rust extension for Azure DevOps",
     "publisher": "spontoreau",
     "public": true,
     "targets": [
@@ -38,12 +38,12 @@
     },
     "links": {
         "support": {
-            "uri": "https://github.com/spontoreau/rust-vsts/issues"
+            "uri": "https://github.com/spontoreau/rust-azure-devops/issues"
         }
     },
     "repository": {
         "type": "git",
-        "uri": "https://github.com/spontoreau/rust-vsts"
+        "uri": "https://github.com/spontoreau/rust-azure-devop"
     },
     "tags": [
         "rust",
