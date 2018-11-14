@@ -1,7 +1,7 @@
 {
-    "name": "rust-vsts-install",
+    "name": "rust-azure-devops-install",
     "version": "1.0.0",
-    "description": "Visual Studio Team Services task that allows developers to install Rust.",
+    "description": "Azure DevOps task that allows developers to install Rust.",
     "main": "index.js",
     "author": "Sylvain Pontoreau",
     "license": "MIT",
