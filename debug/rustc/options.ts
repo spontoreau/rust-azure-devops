@@ -8,7 +8,7 @@ const rustcInput = {
 
 const rustcOptions = { 
     name: "rustcOptions", 
-    value: "-o vsts-rustc-debug" 
+    value: "-o azure-devops-rustc-debug" 
 };
 
 debug("rustc.js", rustcOptions, rustcInput);

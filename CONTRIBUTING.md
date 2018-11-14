@@ -24,7 +24,7 @@ First of all, I want to thank you for spending time to improve this project 🙏
 
 The following guidelines ensure your contributions respect the project philosophy, design, conventions and rules.
 
-> ℹ️ You can talk about this project on [Slack](https://join.slack.com/t/rust-vsts-extension/shared_invite/enQtMzkxNzU4MTgyMDg2LTlkMjJmMzM2MmIyYmJmMjFmNDJkN2IzZmMxZDFhZTgyOGFjYWExNTkwM2YwYTQ3YmI3OWNlYjBhYjcyNGY5OTM)
+> ℹ️ You can talk about this project on [Slack](https://join.slack.com/t/rust-azure-devops-extension/shared_invite/enQtMzkxNzU4MTgyMDg2LTlkMjJmMzM2MmIyYmJmMjFmNDJkN2IzZmMxZDFhZTgyOGFjYWExNTkwM2YwYTQ3YmI3OWNlYjBhYjcyNGY5OTM)
 
 ## <a id="how-to-contribute"></a>❓ How to contribute
 
