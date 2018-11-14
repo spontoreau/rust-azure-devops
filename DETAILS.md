@@ -36,10 +36,10 @@ Those tasks can be used in the same way as the **Cargo** one.
 
 You've got a feature request? You found a bug? 
 
-Don't hesitate to create an issue on [github](https://github.com/spontoreau/rust-vsts/issues)!
+Don't hesitate to create an issue on [github](https://github.com/spontoreau/rust-azure-devops/issues)!
 
 ## Like this extension?
 
-- Don't forget to add a ⭐️ on [Github](https://github.com/spontoreau/rust-vsts)
-- You can also ✍️ a [review](https://marketplace.visualstudio.com/items?itemName=spontoreau.rust-vsts#review-details)!
+- Don't forget to add a ⭐️ on [Github](https://github.com/spontoreau/rust-azure-devops)
+- You can also ✍️ a [review](https://marketplace.visualstudio.com/items?itemName=spontoreau.rust-azure-devops#review-details)!
 - Or share it on Twitter (cc [@spontoreau](https://twitter.com/spontoreau))
