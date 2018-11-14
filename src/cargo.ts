@@ -1,9 +1,7 @@
 import {
-    exec,
     getInput,
     setResult,
     TaskResult,
-    which,
 } from "vsts-task-lib";
 
 import executeCommand from "./common/executeCommand";
