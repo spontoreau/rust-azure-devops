@@ -1,7 +1,7 @@
 import {
     exec,
     which,
-} from "vsts-task-lib";
+} from "azure-pipelines-task-lib";
 
 import addCargoToPath from "./addCargoToPath";
 

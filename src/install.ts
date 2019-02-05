@@ -6,7 +6,7 @@ import {
     TaskResult,
     tool,
     which,
-} from "vsts-task-lib";
+} from "azure-pipelines-task-lib";
 import addCargoToPath from "./common/addCargoToPath";
 import executeCommand from "./common/executeCommand";
 

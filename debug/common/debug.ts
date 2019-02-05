@@ -1,5 +1,5 @@
 import { join } from "path";
-import { TaskMockRunner } from "vsts-task-lib/mock-run";
+import { TaskMockRunner } from "azure-pipelines-task-lib/mock-run";
 import { Input } from "./input";
 
 export default (file: string, ...input: Input[]) => {

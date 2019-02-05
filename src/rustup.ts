@@ -2,7 +2,7 @@ import {
     getInput,
     setResult,
     TaskResult,
-} from "vsts-task-lib";
+} from "azure-pipelines-task-lib";
 
 import executeCommand from "./common/executeCommand";
 
