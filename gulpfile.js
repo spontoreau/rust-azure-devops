@@ -9,7 +9,7 @@ const argv = require('yargs').argv;
 const fs = require("fs");
 const moment = require("moment");
 
-const env = argv.release ? "" : "-beta";
+const env = argv.release ? "" : "-private";
 const patch = (argv.patch !== null && argv.patch !== undefined)
                 ? argv.patch 
                 : moment().format("YYDDDHHmm");;
@@ -39,7 +39,7 @@ gulp.task("copy", () => {
         gulp
             .src("./vss-extension.json")
             .pipe(jeditor((json) => {
-                json.id = `rust-azure-devops${env}`;
+                json.id = `rust-vsts${env}`;
                 json.name = `Rust${env}`;
                 json.public = env ? false : true;
                 json.version = json.version.replace("{patch}", patch);
@@ -78,7 +78,7 @@ gulp.task("copy", () => {
 
 gulp.task("install", () => {
     return ["install", "cargo", "rustup", "rustc"]
-        .map((vstsTask) => run(`npm install vsts-task-lib --prefix ./tmp/tasks/${vstsTask}`).exec());
+        .map((task) => run(`npm install azure-pipelines-task-lib --prefix ./tmp/tasks/${task}`).exec());
 });
 
 gulp.task("default", (cb) => runSequence("clean", "compile", "copy", "install", cb));
