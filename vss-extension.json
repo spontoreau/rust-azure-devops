@@ -3,7 +3,7 @@
     "id": "rust-vsts",
     "version": "1.0.{patch}",
     "name": "Rust",
-    "description": "Rust extension for Visual Studio Team Services",
+    "description": "Rust extension for Azure DevOps",
     "publisher": "spontoreau",
     "public": true,
     "targets": [

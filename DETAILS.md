@@ -41,5 +41,5 @@ Don't hesitate to create an issue on [github](https://github.com/spontoreau/rust
 ## Like this extension?
 
 - Don't forget to add a ⭐️ on [Github](https://github.com/spontoreau/rust-azure-devops)
-- You can also ✍️ a [review](https://marketplace.visualstudio.com/items?itemName=spontoreau.rust-azure-devops#review-details)!
+- You can also ✍️ a [review](https://marketplace.visualstudio.com/items?itemName=spontoreau.rust-vsts#review-details)!
 - Or share it on Twitter (cc [@spontoreau](https://twitter.com/spontoreau))
