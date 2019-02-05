@@ -1,12 +1,12 @@
 {
-    "name": "rust-azure-devops-rustup",
+    "name": "rust-vsts-rustup",
     "version": "1.0.0",
-    "description": "Azure DevOps task that allows developers to execute a command with Rustup, the Rust toolchain installer.",
+    "description": "Visual Studio Team Services task that allows developers to execute a command with Rustup, the Rust toolchain installer.",
     "main": "index.js",
     "author": "Sylvain Pontoreau",
     "license": "MIT",
     "dependencies": {
-      "vsts-task-lib": "^2.6.0"
+      "azure-pipelines-task-lib": "^2.7.7"
     }
   }
   
