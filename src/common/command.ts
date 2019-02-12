@@ -3,9 +3,9 @@ import { exec, which } from "azure-pipelines-task-lib";
 import { addRustToolToPath } from "./path";
 
 type Command = {
-  tool: string,
-  name: string,
-  args: string[]
+  tool: string;
+  name: string;
+  args: string[];
 };
 
 const executeCommand = async (command: Command) => {
@@ -18,13 +18,16 @@ const executeCommand = async (command: Command) => {
     : Promise.reject(new Error("Rust toolchains are not available."));
 };
 
-export {
-  Command,
-  executeCommand
-}
+const createCommand = (
+  tool: string,
+  name: string,
+  options: string
+): Command => {
+  return {
+    args: options.split(" "),
+    name: name,
+    tool: tool
+  };
+};
 
-/*const toolArgs = args
-  ? isInput
-    ? [...args.split(" "), command]
-    : [command, ...args.split(" ")]
-  : command;*/
+export { Command, executeCommand, createCommand };

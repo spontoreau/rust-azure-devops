@@ -9,6 +9,4 @@ const launch = async (task: (...parameters: any[]) => Promise<void>) => {
   }
 };
 
-export {
-  launch
-}
+export { launch };
