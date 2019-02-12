@@ -11,12 +11,6 @@ import { launch } from "./common/launch";
 
 const nightly = getBoolInput("installNightly");
 
-launch(async () => {
-  addRustToolToPath();
-  const returnCode = which("rustup") ? await update() : await install();
-  return nightly ? await installNightly() : checkUpdateResult(returnCode);
-});
-
 const install = async () => {
   debug("Rustup not available.");
   return await tool(which("curl"))
@@ -48,3 +42,10 @@ const checkUpdateResult = (returnCode: Readonly<number>) => {
   if (returnCode !== 0) throw new Error("Rustup update failed.");
   return "Rust updated";
 };
+
+launch(async () => {
+  addRustToolToPath();
+  const returnCode = which("rustup") ? await update() : await install();
+  const resultMessage = checkUpdateResult(returnCode);
+  return nightly ? await installNightly() : resultMessage;
+});
