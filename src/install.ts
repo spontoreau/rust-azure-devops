@@ -2,37 +2,22 @@ import {
   debug,
   exec,
   getBoolInput,
-  setResult,
-  TaskResult,
   tool,
   which
 } from "azure-pipelines-task-lib";
 import { addRustToolToPath } from "./common/path";
 import { executeCommand, createCommand } from "./common/command";
+import { launch } from "./common/launch";
 
-(async (installNightly: boolean) => {
-  try {
-    addRustToolToPath();
+const nightly = getBoolInput("installNightly");
 
-    const returnCode = which("rustup")
-      ? await update()
-      : await downloadAndInstall();
+launch(async () => {
+  addRustToolToPath();
+  const returnCode = which("rustup") ? await update() : await install();
+  return nightly ? await installNightly() : checkUpdateResult(returnCode);
+});
 
-    if (installNightly) {
-      const installCommand = createCommand("rustup", "install", "nightly");
-      const defaultCommand = createCommand("rustup", "default", "nightly");
-      await executeCommand(installCommand);
-      await executeCommand(defaultCommand);
-      setResult(TaskResult.Succeeded, "Rust nightly installed");
-    } else {
-      setUpdateResult(returnCode);
-    }
-  } catch (e) {
-    setResult(TaskResult.Failed, e.message);
-  }
-})(getBoolInput("installNightly"));
-
-async function downloadAndInstall() {
+const install = async () => {
   debug("Rustup not available.");
   return await tool(which("curl"))
     .arg("https://sh.rustup.rs")
@@ -44,18 +29,22 @@ async function downloadAndInstall() {
         .arg("-y")
     )
     .exec();
-}
+};
 
-async function update() {
+const update = async () => {
   debug("Rustup available.");
   return await exec("rustup", "update");
-}
+};
 
-function setUpdateResult(returnCode: Readonly<number>) {
+const installNightly = async () => {
+  const installCommand = createCommand("rustup", "install", "nightly");
+  const defaultCommand = createCommand("rustup", "default", "nightly");
+  await executeCommand(installCommand);
+  return await executeCommand(defaultCommand, "Rust nightly installed");
+};
+
+const checkUpdateResult = (returnCode: Readonly<number>) => {
   debug(`Return code: ${returnCode}`);
-  const updated = returnCode === 0;
-  setResult(
-    updated ? TaskResult.Succeeded : TaskResult.Failed,
-    updated ? "Rust updated." : "Rustup update failed."
-  );
-}
+  if (returnCode !== 0) throw new Error("Rustup update failed.");
+  return "Rust updated";
+};
