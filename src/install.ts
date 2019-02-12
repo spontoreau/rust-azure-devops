@@ -1,60 +1,59 @@
 import {
-    debug,
-    exec,
-    getBoolInput,
-    setResult,
-    TaskResult,
-    tool,
-    which,
+  debug,
+  exec,
+  getBoolInput,
+  setResult,
+  TaskResult,
+  tool,
+  which
 } from "azure-pipelines-task-lib";
 import { addRustToolToPath } from "./common/path";
 import executeCommand from "./common/command";
 
 (async (installNightly: boolean) => {
-    try {
-        addRustToolToPath();
+  try {
+    addRustToolToPath();
 
-        const returnCode = which("rustup")
-                ? await update()
-                : await downloadAndInstall();
+    const returnCode = which("rustup")
+      ? await update()
+      : await downloadAndInstall();
 
-        if (installNightly) {
-            await executeCommand("rustup", "install", "nightly");
-            await executeCommand("rustup", "default", "nightly");
-            setResult(TaskResult.Succeeded, "Rust nightly installed");
-        } else {
-            setUpdateResult(returnCode);
-        }
-    } catch (e) {
-        setResult(TaskResult.Failed, e.message);
+    if (installNightly) {
+      await executeCommand("rustup", "install", "nightly");
+      await executeCommand("rustup", "default", "nightly");
+      setResult(TaskResult.Succeeded, "Rust nightly installed");
+    } else {
+      setUpdateResult(returnCode);
     }
+  } catch (e) {
+    setResult(TaskResult.Failed, e.message);
+  }
 })(getBoolInput("installNightly"));
 
 async function downloadAndInstall() {
-    debug("Rustup not available.");
-    return await tool(which("curl"))
-            .arg("https://sh.rustup.rs")
-            .arg("-sSf")
-            .pipeExecOutputToTool(tool(which("sh"))
-                                    .arg("-s")
-                                    .arg("--")
-                                    .arg("-y"))
-            .exec();
+  debug("Rustup not available.");
+  return await tool(which("curl"))
+    .arg("https://sh.rustup.rs")
+    .arg("-sSf")
+    .pipeExecOutputToTool(
+      tool(which("sh"))
+        .arg("-s")
+        .arg("--")
+        .arg("-y")
+    )
+    .exec();
 }
 
 async function update() {
-    debug("Rustup available.");
-    return await exec("rustup", "update");
+  debug("Rustup available.");
+  return await exec("rustup", "update");
 }
 
 function setUpdateResult(returnCode: Readonly<number>) {
-    debug(`Return code: ${returnCode}`);
-    const updated = returnCode === 0;
-    setResult(
-        updated
-            ? TaskResult.Succeeded
-            : TaskResult.Failed,
-        updated
-            ? "Rust updated."
-            : "Rustup update failed.");
+  debug(`Return code: ${returnCode}`);
+  const updated = returnCode === 0;
+  setResult(
+    updated ? TaskResult.Succeeded : TaskResult.Failed,
+    updated ? "Rust updated." : "Rustup update failed."
+  );
 }
