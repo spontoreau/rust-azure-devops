@@ -3,14 +3,12 @@ import {
     which,
 } from "azure-pipelines-task-lib";
 
-import addCargoToPath from "./addCargoToPath";
+import {
+    addRustToolToPath
+} from "./path";
 
 export default async (tool: string, command: string, args: string, isInput: boolean = false) => {
-    if (!tool || !command) {
-        return Promise.reject(new Error(`${ !tool ? "'tool'" : "'command'" } argument is required`));
-    }
-
-    addCargoToPath();
+    addRustToolToPath();
 
     const toolArgs = args
         ? isInput

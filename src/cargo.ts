@@ -4,7 +4,7 @@ import {
     TaskResult,
 } from "azure-pipelines-task-lib";
 
-import executeCommand from "./common/executeCommand";
+import executeCommand from "./common/command";
 
 (async (command, options) => {
     try {

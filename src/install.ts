@@ -7,12 +7,12 @@ import {
     tool,
     which,
 } from "azure-pipelines-task-lib";
-import addCargoToPath from "./common/addCargoToPath";
-import executeCommand from "./common/executeCommand";
+import { addRustToolToPath } from "./common/path";
+import executeCommand from "./common/command";
 
 (async (installNightly: boolean) => {
     try {
-        addCargoToPath();
+        addRustToolToPath();
 
         const returnCode = which("rustup")
                 ? await update()
