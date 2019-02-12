@@ -8,7 +8,7 @@ import {
   which
 } from "azure-pipelines-task-lib";
 import { addRustToolToPath } from "./common/path";
-import executeCommand from "./common/command";
+import { executeCommand, createCommand } from "./common/command";
 
 (async (installNightly: boolean) => {
   try {
@@ -19,8 +19,10 @@ import executeCommand from "./common/command";
       : await downloadAndInstall();
 
     if (installNightly) {
-      await executeCommand("rustup", "install", "nightly");
-      await executeCommand("rustup", "default", "nightly");
+      const installCommand = createCommand("rustup", "install", "nightly");
+      const defaultCommand = createCommand("rustup", "default", "nightly");
+      await executeCommand(installCommand);
+      await executeCommand(defaultCommand);
       setResult(TaskResult.Succeeded, "Rust nightly installed");
     } else {
       setUpdateResult(returnCode);

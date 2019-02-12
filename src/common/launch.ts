@@ -1,9 +1,9 @@
 import { setResult, TaskResult } from "azure-pipelines-task-lib";
 
-const launch = async (task: (...parameters: any[]) => Promise<void>) => {
+const launch = async (task: (...parameters: any[]) => Promise<string>) => {
   try {
-    await task();
-    setResult(TaskResult.Succeeded, "Task done!");
+    const resultMessage = await task();
+    setResult(TaskResult.Succeeded, resultMessage);
   } catch (e) {
     setResult(TaskResult.Failed, e.message);
   }
