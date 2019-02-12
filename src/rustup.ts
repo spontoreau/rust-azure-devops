@@ -1,12 +1,11 @@
-import { getInput, setResult, TaskResult } from "azure-pipelines-task-lib";
+import { getInput } from "azure-pipelines-task-lib";
+import { executeCommand, createCommand } from "./common/command";
+import { launch } from "./common/launch";
 
-import executeCommand from "./common/command";
+const command = createCommand(
+  "rustup",
+  getInput("rustupCommand"),
+  getInput("rustupCommandArguments")
+);
 
-(async (command, args) => {
-  try {
-    await executeCommand("rustup", command, args);
-    setResult(TaskResult.Succeeded, "Task done!");
-  } catch (e) {
-    setResult(TaskResult.Failed, e.message);
-  }
-})(getInput("rustupCommand"), getInput("rustupCommandArguments"));
+launch(async () => await executeCommand(command));
