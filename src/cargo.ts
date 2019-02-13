@@ -1,19 +1,11 @@
-import {
-    getInput,
-    setResult,
-    TaskResult,
-} from "azure-pipelines-task-lib";
+import { getInput } from "azure-pipelines-task-lib";
+import { executeCommand, createCommand } from "./common/command";
+import { launch } from "./common/launch";
 
-import executeCommand from "./common/executeCommand";
-
-(async (command, options) => {
-    try {
-        await executeCommand("cargo", command, options);
-        setResult(TaskResult.Succeeded, "Task done!");
-    } catch (e) {
-        setResult(TaskResult.Failed, e.message);
-    }
-})(
-    getInput("cargoCommand"),
-    getInput("cargoCommandOptions"),
+const command = createCommand(
+  "cargo",
+  getInput("cargoCommand"),
+  getInput("cargoCommandOptions")
 );
+
+launch(async () => await executeCommand(command));

@@ -1,19 +1,11 @@
-import {
-    getInput,
-    setResult,
-    TaskResult,
-} from "azure-pipelines-task-lib";
+import { getInput } from "azure-pipelines-task-lib";
+import { executeCommand, createInputCommand } from "./common/command";
+import { launch } from "./common/launch";
 
-import executeCommand from "./common/executeCommand";
-
-(async (options, input) => {
-    try {
-        await executeCommand("rustc", input, options, true);
-        setResult(TaskResult.Succeeded, "Task done!");
-    } catch (e) {
-        setResult(TaskResult.Failed, e.message);
-    }
-})(
-    getInput("rustcOptions"),
-    getInput("rustcInput"),
+const command = createInputCommand(
+  "rustc",
+  getInput("rustcInput"),
+  getInput("rustcOptions")
 );
+
+launch(async () => await executeCommand(command));

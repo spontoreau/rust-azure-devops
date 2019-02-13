@@ -6,9 +6,10 @@
   "scripts": {
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "compile": "tsc",
-    "build": "gulp",
+    "build": "npm run format && gulp",
     "package": "gulp pre-package && tfx extension create --root ./tmp --manifest-globs ./vss-extension.json --output-path ./dist",
-    "deploy": "tfx extension publish"
+    "deploy": "tfx extension publish",
+    "format": "prettier --write \"{src, test}/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -42,9 +43,11 @@
     "gulp-run": "^1.7.1",
     "gulp-typescript": "^5.0.0",
     "moment": "^2.24.0",
+    "prettier": "^1.16.4",
     "run-sequence": "^2.2.1",
     "tfx-cli": "^0.6.4",
     "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.1",
     "yargs": "^12.0.5"
   }

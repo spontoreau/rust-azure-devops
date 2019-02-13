@@ -1,60 +1,51 @@
 import {
-    debug,
-    exec,
-    getBoolInput,
-    setResult,
-    TaskResult,
-    tool,
-    which,
+  debug,
+  exec,
+  getBoolInput,
+  tool,
+  which
 } from "azure-pipelines-task-lib";
-import addCargoToPath from "./common/addCargoToPath";
-import executeCommand from "./common/executeCommand";
+import { addRustToolToPath } from "./common/path";
+import { executeCommand, createCommand } from "./common/command";
+import { launch } from "./common/launch";
 
-(async (installNightly: boolean) => {
-    try {
-        addCargoToPath();
+const nightly = getBoolInput("installNightly");
 
-        const returnCode = which("rustup")
-                ? await update()
-                : await downloadAndInstall();
+const install = async () => {
+  debug("Rustup not available.");
+  return await tool(which("curl"))
+    .arg("https://sh.rustup.rs")
+    .arg("-sSf")
+    .pipeExecOutputToTool(
+      tool(which("sh"))
+        .arg("-s")
+        .arg("--")
+        .arg("-y")
+    )
+    .exec();
+};
 
-        if (installNightly) {
-            await executeCommand("rustup", "install", "nightly");
-            await executeCommand("rustup", "default", "nightly");
-            setResult(TaskResult.Succeeded, "Rust nightly installed");
-        } else {
-            setUpdateResult(returnCode);
-        }
-    } catch (e) {
-        setResult(TaskResult.Failed, e.message);
-    }
-})(getBoolInput("installNightly"));
+const update = async () => {
+  debug("Rustup available.");
+  return await exec("rustup", "update");
+};
 
-async function downloadAndInstall() {
-    debug("Rustup not available.");
-    return await tool(which("curl"))
-            .arg("https://sh.rustup.rs")
-            .arg("-sSf")
-            .pipeExecOutputToTool(tool(which("sh"))
-                                    .arg("-s")
-                                    .arg("--")
-                                    .arg("-y"))
-            .exec();
-}
+const installNightly = async () => {
+  const installCommand = createCommand("rustup", "install", "nightly");
+  const defaultCommand = createCommand("rustup", "default", "nightly");
+  await executeCommand(installCommand);
+  return await executeCommand(defaultCommand, "Rust nightly installed");
+};
 
-async function update() {
-    debug("Rustup available.");
-    return await exec("rustup", "update");
-}
+const checkUpdateResult = (returnCode: Readonly<number>) => {
+  debug(`Return code: ${returnCode}`);
+  if (returnCode !== 0) throw new Error("Rustup update failed.");
+  return "Rust updated";
+};
 
-function setUpdateResult(returnCode: Readonly<number>) {
-    debug(`Return code: ${returnCode}`);
-    const updated = returnCode === 0;
-    setResult(
-        updated
-            ? TaskResult.Succeeded
-            : TaskResult.Failed,
-        updated
-            ? "Rust updated."
-            : "Rustup update failed.");
-}
+launch(async () => {
+  addRustToolToPath();
+  const returnCode = which("rustup") ? await update() : await install();
+  const resultMessage = checkUpdateResult(returnCode);
+  return nightly ? await installNightly() : resultMessage;
+});
