@@ -1,8 +1,8 @@
 import debug from "../common/debug";
 
-const installNightlyInput = { 
-    name: "installNightly", 
-    value: "true"
+const installNightlyInput = {
+  name: "installNightly",
+  value: "true"
 };
 
 debug("install.js", installNightlyInput);

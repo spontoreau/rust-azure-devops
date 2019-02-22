@@ -27,10 +27,14 @@ const executeCommand = async (
     : Promise.reject(new Error("Rust toolchains are not available."));
 };
 
-const getToolArgs = (command: Command | InputCommand) => {
-  return isInputCommand(command)
+const getToolArgs = (command: Command | InputCommand): string => {
+  const fullCommand = (isInputCommand(command)
     ? [...command.args, command.input]
-    : [command.name, command.args];
+    : [command.name, ...command.args]);
+    return fullCommand
+      .filter((p) => p !== null && !p.includes("null"))
+      .reduce((p, n) => `${p} ${n}`)
+      .trim();
 };
 
 const isInputCommand = (command: any): command is InputCommand => {
@@ -43,7 +47,7 @@ const createCommand = (
   options: string
 ): Command => {
   return {
-    args: options.split(" "),
+    args: !!options ? options.split(" ") : [],
     name: name,
     tool: tool
   };
@@ -55,7 +59,7 @@ const createInputCommand = (
   options: string
 ): InputCommand => {
   return {
-    args: options.split(" "),
+    args: !!options ? options.split(" ") : [],
     input: input,
     tool: tool
   };
