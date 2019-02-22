@@ -22,6 +22,14 @@
       "required": true
     },
     {
+      "name": "cargoWorkingDir",      
+      "type": "filePath",
+      "label": "Working folder that contains Cargo.toml",
+      "helpMarkDown": "Path to the folder containing the Cargo.toml file.",
+      "defaultValue": "",
+      "required": false
+    },
+    {
       "name": "cargoCommandOptions",
       "type": "string",
       "label": "Options",

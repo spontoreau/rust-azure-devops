@@ -9,7 +9,7 @@
     "build": "npm run format && gulp",
     "package": "gulp pre-package && tfx extension create --root ./tmp --manifest-globs ./vss-extension.json --output-path ./dist",
     "deploy": "tfx extension publish",
-    "format": "prettier --write \"{src, test}/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",

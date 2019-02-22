@@ -1,6 +1,6 @@
+import { homedir } from "os";
 import { delimiter, join } from "path";
 import process from "process";
-import { homedir } from "os";
 
 const addRustToolToPath = () => {
   const toolPath = getToolPath();

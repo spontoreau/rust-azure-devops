@@ -22,6 +22,7 @@ By default, the task will install the latest stable version. You can also instal
 Parameters:
 
 - **Command**: Cargo subcommand to execute (example: build, test, update, install, doc...).
+- **Working directory**: Working folder that contains Cargo.toml (optional).
 - **Options**: Subcommand options (optional).
 
 ## Other tasks

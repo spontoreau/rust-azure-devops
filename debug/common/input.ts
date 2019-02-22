@@ -1,4 +1,4 @@
 export interface Input {
-    name: string,
-    value: string
+  name: string;
+  value: string;
 }

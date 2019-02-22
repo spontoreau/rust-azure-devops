@@ -1,0 +1,6 @@
+[package]
+name = "factorial"
+version = "0.1.0"
+authors = ["spontoreau <pontoreau.sylvain@gmail.com>"]
+
+[dependencies]
