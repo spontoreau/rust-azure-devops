@@ -71,3 +71,9 @@ tmp/
 # tfx
 dist/
 .taskkey
+
+# rust
+debug/**/target/
+
+#macOS
+.DS_Store
