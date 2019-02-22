@@ -28,13 +28,13 @@ const executeCommand = async (
 };
 
 const getToolArgs = (command: Command | InputCommand): string => {
-  const fullCommand = (isInputCommand(command)
+  const fullCommand = isInputCommand(command)
     ? [...command.args, command.input]
-    : [command.name, ...command.args]);
-    return fullCommand
-      .filter((p) => p !== null && !p.includes("null"))
-      .reduce((p, n) => `${p} ${n}`)
-      .trim();
+    : [command.name, ...command.args];
+  return fullCommand
+    .filter(p => p !== null && !p.includes("null"))
+    .reduce((p, n) => `${p} ${n}`)
+    .trim();
 };
 
 const isInputCommand = (command: any): command is InputCommand => {
@@ -48,8 +48,8 @@ const createCommand = (
 ): Command => {
   return {
     args: !!options ? options.split(" ") : [],
-    name: name,
-    tool: tool
+    name,
+    tool
   };
 };
 
@@ -60,8 +60,8 @@ const createInputCommand = (
 ): InputCommand => {
   return {
     args: !!options ? options.split(" ") : [],
-    input: input,
-    tool: tool
+    input,
+    tool
   };
 };
 

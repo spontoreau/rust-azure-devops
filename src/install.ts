@@ -5,9 +5,9 @@ import {
   tool,
   which
 } from "azure-pipelines-task-lib";
-import { addRustToolToPath } from "./common/path";
-import { executeCommand, createCommand } from "./common/command";
+import { createCommand, executeCommand } from "./common/command";
 import { launch } from "./common/launch";
+import { addRustToolToPath } from "./common/path";
 
 const nightly = getBoolInput("installNightly");
 
@@ -39,7 +39,9 @@ const installNightly = async () => {
 
 const checkUpdateResult = (returnCode: Readonly<number>) => {
   debug(`Return code: ${returnCode}`);
-  if (returnCode !== 0) throw new Error("Rustup update failed.");
+  if (returnCode !== 0) {
+    throw new Error("Rustup update failed.");
+  }
   return "Rust updated";
 };
 
