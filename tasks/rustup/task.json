@@ -12,6 +12,13 @@
     "Patch": 0
   },
   "instanceNameFormat": "Rustup",
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "Advanced",
+      "isExpanded": false
+    }
+  ],
   "inputs": [
     {
       "name": "rustupCommand",
@@ -24,9 +31,18 @@
       "name": "rustupCommandArguments",
       "type": "string",
       "label": "Arguments",
-      "helpMarkDown": "Command arguments (add -v to use verbose output).",
+      "helpMarkDown": "Command arguments.",
       "defaultValue": "",
       "required": false
+    },
+    {
+      "name": "verbose",
+      "type": "boolean",
+      "label": "Verbose logging",
+      "helpMarkDown": "Select to print more information to the console on run",
+      "defaultValue": "false",
+      "required": true,
+      "groupName": "advanced"
     }
   ],
   "execution": {

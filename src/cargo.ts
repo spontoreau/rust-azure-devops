@@ -2,6 +2,7 @@ import { getInput } from "azure-pipelines-task-lib";
 import { join } from "path";
 import { createCommand, executeCommand } from "./common/command";
 import { launch } from "./common/launch";
+import { getVerboseOption } from "./common/options";
 
 const workingDir = getInput("cargoWorkingDir");
 const manifestPath = !workingDir
@@ -11,7 +12,7 @@ const manifestPath = !workingDir
 const command = createCommand(
   "cargo",
   getInput("cargoCommand"),
-  `${getInput("cargoCommandOptions")} ${manifestPath}`
+  `${getInput("cargoCommandOptions")} ${manifestPath} ${getVerboseOption()}`
 );
 
 launch(async () => await executeCommand(command));

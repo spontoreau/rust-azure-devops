@@ -11,4 +11,9 @@ const rustcOptions = {
   value: "-o azure-devops-rustc-debug"
 };
 
-debug("rustc.js", rustcOptions, rustcInput);
+const verbose = {
+  name: "verbose",
+  value: "true"
+};
+
+debug("rustc.js", rustcOptions, rustcInput, verbose);
