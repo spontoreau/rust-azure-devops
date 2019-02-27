@@ -32,7 +32,7 @@
       "name": "rustcOptions",
       "type": "string",
       "label": "Options",
-      "helpMarkDown": "Compiler options (add -v to use verbose output).",
+      "helpMarkDown": "Compiler options.",
       "defaultValue": "",
       "required": false
     },
