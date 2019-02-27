@@ -10,4 +10,9 @@ const rustupCommandArgsInput = {
   value: "list"
 };
 
-debug("rustup.js", rustupCommandInput, rustupCommandArgsInput);
+const verbose = {
+  name: "verbose",
+  value: "true"
+};
+
+debug("rustup.js", rustupCommandInput, rustupCommandArgsInput, verbose);
