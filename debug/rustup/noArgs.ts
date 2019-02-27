@@ -5,9 +5,4 @@ const rustupCommandInput = {
   value: "show"
 };
 
-const verbose = {
-  name: "verbose",
-  value: "true"
-};
-
-debug("rustup.js", rustupCommandInput, verbose);
+debug("rustup.js", rustupCommandInput);
