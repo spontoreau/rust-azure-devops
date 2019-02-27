@@ -1,7 +1,7 @@
 import { getBoolInput } from "azure-pipelines-task-lib";
 
-const getVerboseInput = () => {
+const getVerboseOption = () => {
   return getBoolInput("verbose") ? "" : "--verbose";
 };
 
-export { getVerboseInput };
+export { getVerboseOption };

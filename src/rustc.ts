@@ -1,12 +1,12 @@
 import { getInput } from "azure-pipelines-task-lib";
 import { createInputCommand, executeCommand } from "./common/command";
-import { getVerboseInput } from "./common/inputs";
 import { launch } from "./common/launch";
+import { getVerboseOption } from "./common/options";
 
 const command = createInputCommand(
   "rustc",
   getInput("rustcInput"),
-  `${getInput("rustcOptions")} ${getVerboseInput()}`
+  `${getInput("rustcOptions")} ${getVerboseOption()}`
 );
 
 launch(async () => await executeCommand(command));
