@@ -16,9 +16,15 @@ const cargoCommandWorkingDirectory = {
   value: join(__dirname, "sample")
 };
 
+const verbose = {
+  name: "verbose",
+  value: "true"
+};
+
 debug(
   "cargo.js",
   cargoCommandInput,
   cargoCommandOptionsInput,
-  cargoCommandWorkingDirectory
+  cargoCommandWorkingDirectory,
+  verbose
 );
