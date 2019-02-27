@@ -1,4 +1,4 @@
-import { exec, which } from "azure-pipelines-task-lib";
+import { exec, getBoolInput, which } from "azure-pipelines-task-lib";
 
 import { addRustToolToPath } from "./path";
 
