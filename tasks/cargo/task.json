@@ -12,6 +12,13 @@
     "Patch": 0
   },
   "instanceNameFormat": "Cargo",
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "Advanced",
+      "isExpanded": false
+    }
+  ],
   "inputs": [
     {
       "name": "cargoCommand",
@@ -36,6 +43,15 @@
       "helpMarkDown": "Command options (add -v to use verbose output).",
       "defaultValue": "",
       "required": false
+    },
+    {
+      "name": "verbose",
+      "type": "boolean",
+      "label": "Verbose logging",
+      "helpMarkDown": "Select to print more information to the console on run",
+      "defaultValue": "false",
+      "required": true,
+      "groupName": "advanced"
     }
   ],
   "execution": {
