@@ -21,7 +21,7 @@
   ],
   "inputs": [
     {
-      "name": "installNightly",
+      "name": "nightly",
       "type": "boolean",
       "label": "Install nightly",
       "helpMarkDown": "Access to the nightly compiler and its experimental features.",

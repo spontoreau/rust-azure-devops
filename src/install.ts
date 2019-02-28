@@ -9,7 +9,7 @@ import { createCommand, executeCommand } from "./common/command";
 import { launch } from "./common/launch";
 import { addRustToolToPath } from "./common/path";
 
-const nightly = getBoolInput("installNightly");
+const nightly = getBoolInput("nightly");
 
 const install = async () => {
   debug("Rustup not available.");
