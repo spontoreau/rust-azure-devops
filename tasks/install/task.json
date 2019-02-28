@@ -1,6 +1,6 @@
 {
   "id": "186585e2-87f4-43af-9224-6aa5298a1c5a",
-  "name": "Rust",
+  "name": "RustTool",
   "friendlyName": "Rust Tool Installer",
   "description": "Install the latest version of Rust.",
   "helpMarkdown": "For more information, take a look at the Rustup [documentation](https://rustup.rs)",
