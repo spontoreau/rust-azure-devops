@@ -21,7 +21,7 @@
   ],
   "inputs": [
     {
-      "name": "rustcInput",
+      "name": "input",
       "type": "filePath",
       "label": "File",
       "helpMarkDown": "Rust file to compile (.rs).",
@@ -29,7 +29,7 @@
       "required": true
     },
     {
-      "name": "rustcOptions",
+      "name": "options",
       "type": "string",
       "label": "Options",
       "helpMarkDown": "Compiler options.",

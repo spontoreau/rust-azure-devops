@@ -5,8 +5,8 @@ import { getVerboseOption } from "./common/options";
 
 const command = createInputCommand(
   "rustc",
-  getInput("rustcInput"),
-  `${getInput("rustcOptions")} ${getVerboseOption()}`
+  getInput("input"),
+  `${getInput("options")} ${getVerboseOption()}`
 );
 
 launch(async () => await executeCommand(command));

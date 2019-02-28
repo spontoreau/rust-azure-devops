@@ -1,13 +1,13 @@
 import debug from "../common/debug";
 import { join } from "path";
 
-const rustcInput = {
-  name: "rustcInput",
+const input = {
+  name: "input",
   value: join(__dirname, "test.rs")
 };
 
-const rustcOptions = {
-  name: "rustcOptions",
+const options = {
+  name: "options",
   value: "-o azure-devops-rustc-debug"
 };
 
@@ -16,4 +16,4 @@ const verbose = {
   value: "true"
 };
 
-debug("rustc.js", rustcOptions, rustcInput, verbose);
+debug("rustc.js", options, input, verbose);
