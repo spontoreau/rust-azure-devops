@@ -1,18 +1,18 @@
 import debug from "../common/debug";
 import { join } from "path";
 
-const cargoCommandInput = {
-  name: "cargoCommand",
+const command = {
+  name: "command",
   value: "build"
 };
 
-const cargoCommandOptionsInput = {
-  name: "cargoCommandOptions",
+const options = {
+  name: "options",
   value: "--release"
 };
 
-const cargoCommandWorkingDirectory = {
-  name: "cargoWorkingDir",
+const workingDirectory = {
+  name: "workingDirectory",
   value: join(__dirname, "sample")
 };
 
@@ -23,8 +23,8 @@ const verbose = {
 
 debug(
   "cargo.js",
-  cargoCommandInput,
-  cargoCommandOptionsInput,
-  cargoCommandWorkingDirectory,
+  command,
+  options,
+  workingDirectory,
   verbose
 );

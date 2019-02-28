@@ -21,7 +21,7 @@
   ],
   "inputs": [
     {
-      "name": "cargoCommand",
+      "name": "command",
       "type": "string",
       "label": "Command",
       "helpMarkDown": "Cargo command to execute (example: build, test, update, install, doc...)",
@@ -29,7 +29,7 @@
       "required": true
     },
     {
-      "name": "cargoWorkingDir",      
+      "name": "workingDir",      
       "type": "filePath",
       "label": "Working folder that contains Cargo.toml",
       "helpMarkDown": "Path to the folder containing the Cargo.toml file.",
@@ -37,7 +37,7 @@
       "required": false
     },
     {
-      "name": "cargoCommandOptions",
+      "name": "options",
       "type": "string",
       "label": "Options",
       "helpMarkDown": "Command options.",

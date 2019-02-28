@@ -1,8 +1,8 @@
 import debug from "../common/debug";
 
-const cargoCommandInput = {
-  name: "cargoCommand",
+const command = {
+  name: "command",
   value: "help"
 };
 
-debug("cargo.js", cargoCommandInput);
+debug("cargo.js", command);
