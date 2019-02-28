@@ -21,14 +21,14 @@
   ],
   "inputs": [
     {
-      "name": "rustupCommand",
+      "name": "command",
       "type": "string",
       "label": "Command",
       "helpMarkDown": "Rustup command to execute (example: update, default, target...)",
       "defaultValue": "",
       "required": true
     }, {
-      "name": "rustupCommandArguments",
+      "name": "arguments",
       "type": "string",
       "label": "Arguments",
       "helpMarkDown": "Command arguments.",

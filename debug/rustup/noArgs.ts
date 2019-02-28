@@ -1,8 +1,8 @@
 import debug from "../common/debug";
 
-const rustupCommandInput = {
-  name: "rustupCommand",
+const command = {
+  name: "command",
   value: "show"
 };
 
-debug("rustup.js", rustupCommandInput);
+debug("rustup.js", command);

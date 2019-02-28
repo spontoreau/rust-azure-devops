@@ -1,12 +1,12 @@
 import debug from "../common/debug";
 
-const rustupCommandInput = {
-  name: "rustupCommand",
+const command = {
+  name: "command",
   value: "target"
 };
 
-const rustupCommandArgsInput = {
-  name: "rustupCommandArguments",
+const args = {
+  name: "arguments",
   value: "list"
 };
 
@@ -15,4 +15,4 @@ const verbose = {
   value: "true"
 };
 
-debug("rustup.js", rustupCommandInput, rustupCommandArgsInput, verbose);
+debug("rustup.js", command, args, verbose);

@@ -5,8 +5,8 @@ import { getVerboseOption } from "./common/options";
 
 const command = createCommand(
   "rustup",
-  getInput("rustupCommand"),
-  `${getInput("rustupCommandArguments")} ${getVerboseOption()}`
+  getInput("command"),
+  `${getInput("arguments")} ${getVerboseOption()}`
 );
 
 launch(async () => await executeCommand(command));
