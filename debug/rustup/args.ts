@@ -6,7 +6,7 @@ const command = {
 };
 
 const args = {
-  name: "arguments",
+  name: "options",
   value: "list"
 };
 

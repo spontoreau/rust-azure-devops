@@ -28,7 +28,7 @@
       "defaultValue": "",
       "required": true
     }, {
-      "name": "arguments",
+      "name": "options",
       "type": "string",
       "label": "Arguments",
       "helpMarkDown": "Command arguments.",
