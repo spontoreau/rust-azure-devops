@@ -22,4 +22,10 @@ const getFileInput = () => {
   return getInput("inputFile");
 };
 
-export { getCommand, getFileInput, getOptions, getVerboseOption, getWorkingDirectoryOption };
+export {
+  getCommand,
+  getFileInput,
+  getOptions,
+  getVerboseOption,
+  getWorkingDirectoryOption
+};
