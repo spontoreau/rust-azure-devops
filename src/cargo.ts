@@ -1,18 +1,16 @@
-import { getInput } from "azure-pipelines-task-lib";
-import { join } from "path";
 import { createCommand, executeCommand } from "./common/command";
 import { launch } from "./common/launch";
-import { getVerboseOption } from "./common/options";
-
-const workingDir = getInput("workingDirectory");
-const manifestPath = !workingDir
-  ? ""
-  : `--manifest-path ${join(workingDir, "Cargo.toml")}`;
+import {
+  getCommand,
+  getOptions,
+  getVerboseOption,
+  getWorkingDirectoryOption
+} from "./common/inputs";
 
 const command = createCommand(
   "cargo",
-  getInput("command"),
-  `${getInput("options")} ${manifestPath} ${getVerboseOption()}`
+  getCommand(),
+  `${getOptions()} ${getWorkingDirectoryOption()} ${getVerboseOption()}`
 );
 
 launch(async () => await executeCommand(command));
