@@ -18,4 +18,8 @@ const getOptions = () => {
   return getInput("options");
 };
 
-export { getCommand, getOptions, getVerboseOption, getWorkingDirectoryOption };
+const getFileInput = () => {
+  return getInput("inputFile");
+};
+
+export { getCommand, getFileInput, getOptions, getVerboseOption, getWorkingDirectoryOption };

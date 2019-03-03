@@ -2,7 +2,7 @@ import debug from "../common/debug";
 import { join } from "path";
 
 const input = {
-  name: "input",
+  name: "inputFile",
   value: join(__dirname, "test.rs")
 };
 

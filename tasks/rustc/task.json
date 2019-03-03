@@ -21,7 +21,7 @@
   ],
   "inputs": [
     {
-      "name": "input",
+      "name": "inputFile",
       "type": "filePath",
       "label": "File",
       "helpMarkDown": "Rust file to compile (.rs).",
