@@ -1,3 +1,5 @@
+⚠️ **This project is no longer maintain, use instead Azure pipelines YAML file to setup CI in your Rust projects** ⚠️
+
 # Rust extension for Azure DevOps
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)

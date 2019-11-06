@@ -1,6 +1,8 @@
 Rust 🦀
 ===
 
+⚠️ **This extension is no longer maintain, use instead Azure Pipelines YAML file to setup CI in your Rust projects** ⚠️
+
 This extension contains tasks that can be used to manage **Rust** projects.
 
 **Rust** is a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety. For more information on **Rust**, take a look at the official [documentation](https://www.rust-lang.org).
